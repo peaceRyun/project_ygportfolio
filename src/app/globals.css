@@ -1,40 +1,80 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-pretendard: "Pretendard Variable", sans-serif;
+    --background: #ffffff;
+    --foreground: #171717;
+    --font-pretendard: 'Pretendard Variable', sans-serif;
+
+    --primary: #f6bb3b;
+
+    --bp-mobileUp: 360px;
+    --bp-mobile: 390px;
+    --bp-mobileDown: 600px;
+
+    --bp-tabletUp: 601px;
+    --bp-tablet: 768px;
+    --bp-tabletDown: 1024px;
+
+    --bp-desktopUp: 1025px;
+    --bp-desktop: 1920px;
+
+    --lh-mobile: 150%;
+    --lh-pc-l: 130%;
+    --lh-pc-n: 160%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    /* primary-color */
+    --color-primary: var(--primary);
+
+    /* fonts 설정 */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --font-pretendard: var(--font-pretendard);
+
+    /* Breakpoint */
+    --breakpoint-mobileUp: 360px;
+    --breakpoint-mobile: 390px;
+    --breakpoint-mobiledown: 600px;
+
+    --breakpoint-tabletUp: 601px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-tabletDown: 1024px;
+
+    --breakpoint-desktopUp: 1025px;
+    --breakpoint-desktop: 1920px;
+
+    /* 행간  */
+    --line-height-mobile: 150%;
+    --line-height-pc-l: 130%;
+    --line-height-pc-n: 160%;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-pretendard);
-  font-weight: 400;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-pretendard);
+    font-weight: 400;
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
