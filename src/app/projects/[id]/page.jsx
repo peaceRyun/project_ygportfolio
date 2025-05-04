@@ -62,8 +62,8 @@ const ProjectPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='img-area flex-1'>
-                        <div className='h-[2000px] flex flex-col gap-4'>
+                    <div className='detail-area flex-1'>
+                        <div className='h-[2000px] flex flex-col gap-4 pl-12 max-lg:pl-8 max-sm:pl-5'>
                             <section>
                                 <h5 className='font-bold text-2xl'>Period</h5>
                                 <p>
