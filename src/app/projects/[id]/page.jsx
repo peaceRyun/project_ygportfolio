@@ -1,6 +1,7 @@
 'use client';
 
 import { portfoliodata } from '@/app/api/data';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 const ProjectPage = () => {
@@ -9,7 +10,21 @@ const ProjectPage = () => {
 
     const projectData = portfoliodata.find((item) => item.id === paramsId);
 
-    const { id, src, alt, title } = projectData;
+    const {
+        id,
+        src,
+        alt,
+        title,
+        titledetail,
+        deploy,
+        code,
+        desc,
+        techStack,
+        period_start,
+        period_end,
+        keyFeatures,
+        troubleShooting,
+    } = projectData;
 
     if (!projectData) {
         return <div>프로젝트 데이터를 불러오지 못했습니다.</div>;
@@ -17,31 +32,100 @@ const ProjectPage = () => {
 
     return (
         <>
-            <div className='relative w-full h-[587px] overflow-hidden max-lg:h-[510px]'>
+            <section className='relative w-full h-[587px] overflow-hidden max-lg:h-[510px]'>
+                <h2 className='sr-only'>{title}</h2>
                 <div className='absolute top-1/2 left-0 -translate-y-1/2 mx-auto flex flex-col justify-center z-20 w-full max-w-[1400px] px-8 max-lg:max-w-auto max-sm:max-w-auto max-sm:px-5'>
-                    <h2 className='text-white text-6xl font-bold'>{title}</h2>
+                    <h3 className='text-white text-6xl font-bold'>{title}</h3>
                 </div>
                 <img src={src} alt={alt} className='absolute top-0 left-0 z-0 blur-sm' />
-                <div className='absolute inset-0 w-full h-full z-10 bg-[rgba(0, 0, 0, 0.6)]'></div>
+                <div className='absolute inset-0 w-full h-full z-10 bg-black opacity-60'></div>
                 <div className='waveAni absolute bottom-[-76px] left-0 w-[5000px] h-[247px] z-30 object-contain max-lg:bottom-0 max-lg:h-[160px]'></div>
-            </div>
-            <div className='w-full max-w-[1400px] mx-auto relative z-10 max-lg:px-8 max-sm:px-5'>
-                <div className='contents-wrap flex justify-between items-stretch'>
+            </section>
+            <main className='w-full max-w-[1400px] mx-auto relative z-10 pt-[7.5rem] px-12 max-lg:px-8 max-sm:px-5'>
+                <div className='contents-wrap flex justify-between items-stretch max-lg:flex-col max-lg:gap-20'>
                     <div className='info-area flex-1'>
-                        <div className='sticky top-0 left-0 w-full'>
-                            <div className='flex items-center w-full'>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium aliquam sapiente
-                                mollitia corrupti, cum iste enim, eligendi, dolor optio nam aspernatur itaque nostrum?
-                                Placeat harum laboriosam veritatis consectetur totam! Adipisci!
+                        <div className='sticky top-[160px] left-0 w-full pr-12 max-lg:pr-8 max-sm:pr-5 max-lg:relative max-lg:top-0'>
+                            <div className='flex flex-col items-start w-full gap-10'>
+                                <h4 className='text-4xl font-semibold whitespace-pre-wrap'>{titledetail}</h4>
+                                <div className='flex flex-col gap-4'>
+                                    <p className='font-medium'>Overview</p>
+                                    <p>{desc}</p>
+                                </div>
+                                <div className='flex flex-col w-full'>
+                                    <Link href={deploy} className='w-full py-2 border-b-1'>
+                                        Go Website
+                                    </Link>
+                                    <Link href={code} className='w-full py-2 border-b-1'>
+                                        Go Github
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className='img-area flex-1'>
-                        <div className='h-[2000px]'>dd</div>
+                        <div className='h-[2000px] flex flex-col gap-4'>
+                            <section>
+                                <h5 className='font-bold text-2xl'>Period</h5>
+                                <p>
+                                    <span>{period_start}</span> ~ <span>{period_end}</span>
+                                </p>
+                            </section>
+                            <section>
+                                <h5 className='font-bold text-2xl'>Tech Stack</h5>
+                                <ul>
+                                    {techStack.map((item, index) => (
+                                        <li key={index} className='inline mr-4'>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                            <section>
+                                <h5 className='font-bold text-2xl'>Request(Self)</h5>
+                                <ul>
+                                    {techStack.map((item, index) => (
+                                        <li key={index} className='inline mr-4'>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                            <section>
+                                <h5 className='font-bold text-2xl'>Key Features</h5>
+                                <ul>
+                                    {keyFeatures.map((item) => (
+                                        <li key={item.title} className='inline mr-4'>
+                                            <p className='mb-3 text-xl'>{item.title}</p>
+                                            <div className='flex flex-col gap-1'>
+                                                <p>{item.desc1}</p>
+                                                <p>{item.desc2}</p>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                            <section>
+                                <h5 className='font-bold text-2xl'>Trouble Shooting</h5>
+                                <ul>
+                                    {troubleShooting.map((item) => (
+                                        <li key={item.title} className='inline mr-4'>
+                                            <p className='mb-3 text-xl'>{item.title}</p>
+                                            <div className='flex flex-col gap-2'>
+                                                <p>{item.problem}</p>
+                                                <div className='flex flex-col gap-1'>
+                                                    <p>해결과정</p>
+                                                    <p>{item.solution}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        </div>
                         <div className='h-[2000px]'>dd</div>
                     </div>
                 </div>
-            </div>
+            </main>
         </>
     );
 };
