@@ -122,15 +122,11 @@ body {
     }
 }
 
-/* IconWrap 스타일 변환 */
-/* baseVh 계산 결과 하드코딩: width=0.5*10=5vh, height=0.5*12=6vh */
 .icon-wrap {
     width: 5vh;
     height: 6vh;
 }
 
-/* Chevron 스타일 변환 */
-/* baseVh 계산 결과 하드코딩: width=0.5*3.5=1.75vh, height=0.5*0.8=0.4vh */
 .chevron {
     position: absolute;
     top: 0;
@@ -172,3 +168,27 @@ body {
     transform: skewY(-30deg);
 }
 /* 스크롤 아이콘 관련 애니메이션 css 끝 */
+
+/* 프로젝트 상세페이지 Wave animation 관련 시작*/
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.waveAni {
+    animation: wave 30s linear infinite;
+    background: url(../../public/projects/bg_wave.png) no-repeat;
+}
+
+@media (max-width: 1280px) {
+    .waveAni {
+        animation: wave 25s linear infinite;
+    }
+}
