@@ -1,5 +1,10 @@
 export const portfoliodata = [
-    { id: 1, src: '/home/displayportfolio/title/portfolio_title_slide_personal.png', alt: '개인프로젝트제목슬라이드' },
+    {
+        id: 1,
+        src: '/home/displayportfolio/title/portfolio_title_slide_personal.png',
+        alt: '개인프로젝트제목슬라이드',
+        noClick: true,
+    },
     {
         id: 2,
         title: 'PRETCOORD 랜딩 페이지 코드 리메이크',
@@ -42,6 +47,7 @@ export const portfoliodata = [
         id: 5,
         src: '/home/displayportfolio/title/portfolio_title_slide_team.png',
         alt: '팀프로젝트제목슬라이드',
+        noClick: true,
     },
     {
         id: 6,
