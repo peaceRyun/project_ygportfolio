@@ -35,6 +35,9 @@
     --text-90-15vh-180: clamp(90px, 15vh, 180px);
     --text-73-16vh-136: clamp(73px, 16vh, 136px);
     --text-40-16vh-73: clamp(40px, 16vh, 73px);
+    --text-40-5vh-60: clamp(40px, 5vh, 60px);
+    --text-38-4vh-44: clamp(38px, 4vh, 44px);
+    --text-32-3vh-40: clamp(32px, 3vh, 40px);
     --text-8-2vh-20: clamp(8px, 2vh, 20px);
     --text-12-1vw-20: clamp(12px, 1.5vw, 20px);
 
