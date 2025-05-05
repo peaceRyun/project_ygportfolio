@@ -192,3 +192,66 @@ body {
         animation: wave 25s linear infinite;
     }
 }
+
+/* 커스텀 커서 스타일 */
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #ee2c3c;
+    z-index: 201;
+    pointer-events: none; /* 마우스 이벤트가 커서 아래 요소에 전달되도록 설정 */
+    transition: opacity 0.3s;
+}
+
+#cursor:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ee2c3c;
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+/* 프로젝트 페이지로 가지는 링크 hover시 */
+#cursor.cursor-style03 {
+    background: transparent;
+}
+
+#cursor.cursor-style03:after {
+    background: rgba(238, 44, 60, 0.5);
+    backdrop-filter: blur(3px);
+    transform: scale(4.4);
+}
+
+#cursor.cursor-style03:before {
+    content: 'See';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* 일반 a태그 hover시 */
+#cursor.cursor-style02 {
+    background: transparent;
+    opacity: 0.8;
+}
+
+#cursor.cursor-style02:after {
+    transition: 0.3s ease-in-out;
+    transform: scale(2);
+}

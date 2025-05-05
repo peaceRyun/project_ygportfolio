@@ -98,7 +98,10 @@ const ProjectList = () => {
                             ) : (
                                 <Link href={`/projects/${item.id}`}>
                                     <div className='w-full h-auto relative rounded-xl group overflow-hidden aspect-video max-h-full'>
-                                        <div className='absolute inset-0 w-full h-full z-20 bg-transparent opacity-0 transition duration-300 ease-in-out group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-transparent group-hover:opacity-100'>
+                                        <div
+                                            data-project-link='true'
+                                            className='absolute inset-0 w-full h-full z-20 bg-transparent opacity-0 transition duration-300 ease-in-out group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-transparent group-hover:opacity-100 '
+                                        >
                                             <div className='absolute bottom-0 flex items-end justify-between w-full mt-auto p-10 text-white font-pretendard'>
                                                 <span className='font-medium text-md'>{item.title}</span>
                                                 <span className='font-thin text-sm'>{item.thumbstartdate}</span>
@@ -107,7 +110,7 @@ const ProjectList = () => {
                                         <img
                                             src={item.src}
                                             alt={item.alt}
-                                            className='object-cover block w-full h-full transition duration-300 ease-in-out group-hover:scale-[1.04] group-hover:cursor-pointer'
+                                            className='object-cover block w-full h-full transition duration-300 ease-in-out group-hover:scale-[1.04] group-hover:cursor-pointer '
                                         />
                                     </div>
                                 </Link>

@@ -55,10 +55,10 @@ const ProjectPage = () => {
                                     <p>{desc}</p>
                                 </div>
                                 <div className='flex flex-col w-full'>
-                                    <Link href={deploy} className='w-full py-2 border-b-1'>
+                                    <Link href={deploy} className='w-full py-2 border-b-1' data-project-link='true'>
                                         Go Website
                                     </Link>
-                                    <Link href={code} className='w-full py-2 border-b-1'>
+                                    <Link href={code} className='w-full py-2 border-b-1' data-project-link='true'>
                                         Go Github
                                     </Link>
                                 </div>
