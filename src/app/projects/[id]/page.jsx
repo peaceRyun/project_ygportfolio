@@ -1,6 +1,7 @@
 'use client';
 
 import { portfoliodata } from '@/app/api/data';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
@@ -37,7 +38,7 @@ const ProjectPage = () => {
                 <div className='absolute top-1/2 left-0 -translate-y-1/2 mx-auto flex flex-col justify-center z-20 w-full max-w-[1400px] px-8 max-lg:max-w-auto max-sm:max-w-auto max-sm:px-5'>
                     <h3 className='text-white text-6xl font-bold'>{title}</h3>
                 </div>
-                <img src={src} alt={alt} className='absolute top-0 left-0 z-0 blur-sm' />
+                <Image src={src} alt={alt} className='absolute top-0 left-0 z-0 blur-sm' fill />
                 <div className='absolute inset-0 w-full h-full z-10 bg-black opacity-60'></div>
                 <div className='waveAni absolute bottom-[-76px] left-0 w-[5000px] h-[247px] z-30 object-contain max-lg:bottom-0 max-lg:h-[160px]'></div>
             </section>
