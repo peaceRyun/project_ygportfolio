@@ -25,6 +25,8 @@ const ProjectPage = () => {
         period_end,
         keyFeatures,
         troubleShooting,
+        requests,
+        process,
     } = projectData;
 
     if (!projectData) {
@@ -81,16 +83,33 @@ const ProjectPage = () => {
                                     ))}
                                 </ul>
                             </section>
-                            <section>
-                                <h5 className='font-bold text-2xl'>Request(Self)</h5>
-                                <ul>
-                                    {techStack.map((item, index) => (
-                                        <li key={index} className='inline mr-4'>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </section>
+                            {requests ? (
+                                <section>
+                                    <h5 className='font-bold text-2xl'>Request(Self)</h5>
+                                    <ul>
+                                        {requests.map((item, index) => (
+                                            <li key={index} className='inline mr-4'>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            ) : null}
+                            {process ? (
+                                <section>
+                                    <h5 className='font-bold text-2xl'>Process</h5>
+                                    <ul>
+                                        {process.map((item) => (
+                                            <li key={item.title} className='inline mr-4'>
+                                                <p className='mb-3 text-xl'>{item.title}</p>
+                                                <div className='flex flex-col gap-1'>
+                                                    <p>{item.desc}</p>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            ) : null}
                             <section>
                                 <h5 className='font-bold text-2xl'>Key Features</h5>
                                 <ul>
@@ -112,7 +131,10 @@ const ProjectPage = () => {
                                         <li key={item.title} className='inline mr-4'>
                                             <p className='mb-3 text-xl'>{item.title}</p>
                                             <div className='flex flex-col gap-2'>
-                                                <p>{item.problem}</p>
+                                                <div className='flex flex-col gap-1'>
+                                                    <p>문제정의</p>
+                                                    <p>{item.problem}</p>
+                                                </div>
                                                 <div className='flex flex-col gap-1'>
                                                     <p>해결과정</p>
                                                     <p>{item.solution}</p>
@@ -123,7 +145,6 @@ const ProjectPage = () => {
                                 </ul>
                             </section>
                         </div>
-                        <div className='h-[2000px]'>dd</div>
                     </div>
                 </div>
             </main>
