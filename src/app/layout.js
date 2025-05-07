@@ -3,6 +3,8 @@ import { Poppins } from 'next/font/google';
 import localFont from 'next/font/local';
 import ClientLayout from './csrcomponents/ClientLayout';
 import CustomCursor from './ui/cursor/Cursor';
+import Header from './layouts/header/Header';
+import Footer from './layouts/footer/Footer';
 
 export const metadata = {
     title: 'Create Next App',
@@ -30,7 +32,9 @@ export default function RootLayout({ children }) {
             <body>
                 <ClientLayout>
                     <CustomCursor />
+                    <Header />
                     {children}
+                    <Footer />
                 </ClientLayout>
             </body>
         </html>

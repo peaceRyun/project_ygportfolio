@@ -1,4 +1,3 @@
-import Footer from '../layouts/footer/Footer';
 import PerformanceB from './components/banner/PerformanceB';
 import Intro from './components/intro/Intro';
 import ProjectList from './components/project/ProjectList';
@@ -13,7 +12,6 @@ const HomePage = () => {
                 <PerformanceB />
                 <ProjectList />
             </main>
-            <Footer />
         </>
     );
 };

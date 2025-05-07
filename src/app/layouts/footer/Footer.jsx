@@ -2,9 +2,9 @@ import ThreeInteraction from './components/ThreeInteraction';
 
 const Footer = () => {
     return (
-        <div>
+        <footer>
             <ThreeInteraction />
-        </div>
+        </footer>
     );
 };
 
