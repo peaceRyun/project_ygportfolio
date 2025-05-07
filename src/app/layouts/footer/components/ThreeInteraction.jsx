@@ -322,7 +322,7 @@ const ThreeInteraction = () => {
 
     // 컴포넌트 JSX: Three.js 캔버스가 추가될 DOM 요소를 반환
     return (
-        <div ref={mountRef} style={{ width: '100%', height: '100vh' }}>
+        <div ref={mountRef} className='w-full h-full'>
             {/* Three.js renderer.domElement가 이 div 안에 추가됩니다. */}
         </div>
     );

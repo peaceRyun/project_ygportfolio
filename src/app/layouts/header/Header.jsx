@@ -30,14 +30,38 @@ const Header = () => {
         };
     }, [isScrolled]);
 
+    useEffect(() => {
+        if (window.location.hash === '#projects') {
+            setTimeout(() => {
+                gsap.to(window, {
+                    scrollTo: '#projects',
+                    duration: 1,
+                    ease: 'power2.inOut',
+                });
+            }, 100);
+        }
+    }, [pathname]);
+
     const handleProjectsClick = (e) => {
+        if (pathname !== '/') {
+            return;
+        }
         e.preventDefault(); // 기본 앵커 링크 동작 방지
 
         gsap.to(window, {
             scrollTo: '#projects',
             duration: 1,
             ease: 'power2.inOut',
-            offsetY: 60,
+        });
+    };
+
+    const handleContactClick = (e) => {
+        e.preventDefault(); // 기본 앵커 링크 동작 방지
+
+        gsap.to(window, {
+            scrollTo: '#contact',
+            duration: 1,
+            ease: 'power2.inOut',
         });
     };
 
@@ -46,19 +70,22 @@ const Header = () => {
     return (
         <header className='w-full fixed z-50 flex items-center justify-center'>
             <div
-                className={`header-inner relative top-9 transition-width duration-200 ease-out h-16 max-w-[1400px] flex items-center overflow-hidden rounded-4xl ${isScrolled ? 'w-2/3' : 'w-full'}`}
+                className={`header-inner relative top-9 transition-width duration-200 ease-out h-16 max-w-[1400px] flex items-center overflow-hidden rounded-4xl ${isScrolled ? 'w-1/2' : 'w-full'}`}
             >
-                <h1 className='sr-only'>로고</h1>
+                <h1 className='sr-only'>YG's Portfolio</h1>
                 <div
                     className={`header-bg absolute z-10 inset-0 transition duration-200 ease-in-out ${isScrolled ? 'bg-secondary opacity-90' : 'bg-transparent'}`}
                 ></div>
                 <div className='nav-inner relative w-full flex items-center justify-between z-20'>
-                    <Link href='/' className='font-poppins font-black text-lg ml-[3.125rem] text-primary'>
+                    <Link href='/' className='font-poppins font-bold text-lg ml-[3.125rem] text-primary'>
                         YG's Portfolio
                     </Link>
-                    <div className={`flex items-center gap-6 text-md ${textColorClass}`}>
-                        <Link href='#projects' onClick={handleProjectsClick} className='py-4 px-5 hover:text-primary'>
+                    <div className={`flex items-center text-md ${textColorClass}`}>
+                        <Link href='/#projects' onClick={handleProjectsClick} className='py-4 px-5 hover:text-primary'>
                             Projects
+                        </Link>
+                        <Link href='#contact' onClick={handleContactClick} className='py-4 px-5 hover:text-primary'>
+                            Contact
                         </Link>
                     </div>
                 </div>

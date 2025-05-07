@@ -3,7 +3,9 @@ import ThreeInteraction from './components/ThreeInteraction';
 const Footer = () => {
     return (
         <footer>
-            <ThreeInteraction />
+            <div id='contact' className='relative w-full h-screen'>
+                <ThreeInteraction />
+            </div>
         </footer>
     );
 };

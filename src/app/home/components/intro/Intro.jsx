@@ -2,6 +2,7 @@
 
 import ScrollToExploreIcon from '@/app/ui/scrolltoexploreicon/ScrollToExploreIcon';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import { useRef } from 'react';
 
 const Intro = () => {
@@ -32,11 +33,12 @@ const Intro = () => {
                             <h3 className={`${introText} font-thin`}>Learning</h3>
                             <div className='flex gap-[1vw]'>
                                 <h3 className={`${introText} font-bold`}>and</h3>
-                                <div className='w-150-30vh-250 h-72-15vh-144 max-sm:w-[109.5px] max-sm:h-[58.41px] max-lg:w-100-30vh-204 max-lg:h-58-10vh-108'>
-                                    <img
+                                <div className='relative w-150-30vh-250 h-72-15vh-144 max-sm:w-[109.5px] max-sm:h-[58.41px] max-lg:w-100-30vh-204 max-lg:h-58-10vh-108'>
+                                    <Image
                                         className='block w-full h-full object-cover'
-                                        src='./home/intro/seesaw-unscreen.gif'
+                                        src='/home/intro/seesaw-unscreen.gif'
                                         alt='코끼리 시소'
+                                        fill
                                     />
                                 </div>
                             </div>

@@ -322,3 +322,45 @@ export const portfoliodata = [
         ],
     },
 ];
+
+export const techstackdata = [
+    {
+        name: 'html5',
+        img: '/ui/icons/HTML5.svg',
+        desc: 'HTML5 & CSS을 활용한 웹 표준과 접근성을 고려한 마크업 작성이 가능합니다.',
+    },
+    {
+        name: 'css3',
+        img: '/ui/icons/CSS3.svg',
+        desc: 'HTML5 & CSS을 활용한 웹 표준과 접근성을 고려한 마크업 작성이 가능합니다.',
+    },
+    { name: 'javascript', img: '/ui/icons/JavaScript.svg', desc: 'JavaScript를 사용한 동적인 UI 구현을 하였습니다.' },
+    { name: 'react', img: '/ui/icons/React.svg', desc: 'React을 통해 효율적인 컴포넌트 기반 개발을 하였습니다.' },
+    { name: 'redux', img: '/ui/icons/redux.svg', desc: 'Redux를 통해 상태관리 최적화를 하였습니다.' },
+    {
+        name: 'styled-components',
+        img: '/ui/icons/styled-components.svg',
+        desc: 'CSS를 유지보수성과 확장성을 고려한 구조로 설계하였습니다.',
+    },
+    { name: 'sass', img: '/ui/icons/Sass.svg', desc: 'CSS를 유지보수성과 확장성을 고려한 구조로 설계하였습니다.' },
+    {
+        name: 'gsap',
+        img: '/ui/icons/GSAP.svg',
+        desc: '사용자 경험을 극대화 하기 위해 스크롤 인터랙티브 요소를 구현하였습니다.',
+    },
+    {
+        name: 'next.js',
+        img: '',
+        desc: 'Next.js를 사용한 SSR과 최적화 기법을 적용하여 성능을 개선하였습니다.',
+    },
+    {
+        name: 'github',
+        img: '/ui/icons/github.svg',
+        desc: 'Git, Github을 이용하여 협업 환경에서의 코드 버전 관리 및 브랜칭을 통한 효율적인 프로젝트 관리가 가능합니다.',
+    },
+    {
+        name: 'Confluence',
+        img: '',
+        desc: 'Confluence을 이용하여 툴을 이용하여 프로젝트 문서 정리 및 공유를 통한 작업 흐름 명확화를 하고, 이를 통해 실시간 커뮤니케이션으로 이슈를 빠르게 해결할 수 있습니다.',
+    },
+];
