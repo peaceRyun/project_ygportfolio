@@ -68,13 +68,13 @@ const ProjectPage = () => {
                     <div className='detail-area flex-1'>
                         <div className='h-[2000px] flex flex-col gap-4'>
                             <section>
-                                <h5 className='font-bold text-2xl'>Period</h5>
+                                <h5 className='font-bold text-2xl mb-4'>Period</h5>
                                 <p>
                                     <span>{period_start}</span> ~ <span>{period_end}</span>
                                 </p>
                             </section>
                             <section>
-                                <h5 className='font-bold text-2xl'>Tech Stack</h5>
+                                <h5 className='font-bold text-2xl mb-4'>Tech Stack</h5>
                                 <ul>
                                     {techStack.map((item, index) => (
                                         <li key={index} className='inline mr-4'>
@@ -85,7 +85,7 @@ const ProjectPage = () => {
                             </section>
                             {requests ? (
                                 <section>
-                                    <h5 className='font-bold text-2xl'>Request(Self)</h5>
+                                    <h5 className='font-bold text-2xl mb-4'>Request(Self)</h5>
                                     <ul>
                                         {requests.map((item, index) => (
                                             <li key={index} className='inline mr-4'>
@@ -97,7 +97,7 @@ const ProjectPage = () => {
                             ) : null}
                             {process ? (
                                 <section>
-                                    <h5 className='font-bold text-2xl'>Process</h5>
+                                    <h5 className='font-bold text-2xl mb-4'>Process</h5>
                                     <ul>
                                         {process.map((item) => (
                                             <li key={item.title} className='inline mr-4'>
@@ -111,7 +111,7 @@ const ProjectPage = () => {
                                 </section>
                             ) : null}
                             <section>
-                                <h5 className='font-bold text-2xl'>Key Features</h5>
+                                <h5 className='font-bold text-2xl mb-4'>Key Features</h5>
                                 <ul>
                                     {keyFeatures.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
@@ -125,7 +125,7 @@ const ProjectPage = () => {
                                 </ul>
                             </section>
                             <section>
-                                <h5 className='font-bold text-2xl'>Trouble Shooting</h5>
+                                <h5 className='font-bold text-2xl mb-4'>Trouble Shooting</h5>
                                 <ul>
                                     {troubleShooting.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
