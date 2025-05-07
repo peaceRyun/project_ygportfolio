@@ -56,7 +56,7 @@ const ProjectList = () => {
         };
     }, []);
     return (
-        <section className='portfolio relative w-full h-full overflow-hidden bg-white' ref={sectionRef}>
+        <section id='projects' className='relative w-full h-full overflow-hidden bg-white' ref={sectionRef}>
             <h2 className='sr-only'>프로젝트 섹션</h2>
             <div className='px-20 pb-[60px] h-screen flex flex-col items-start gap-24 [@media_(max-height:700px)]:gap-16 [@media_(max-height:550px)]:gap-10'>
                 <div className='textBox w-full pt-[15vh] pb-[10vh] text-[#0f0d0d]'>
