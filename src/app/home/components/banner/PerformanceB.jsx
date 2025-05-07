@@ -56,7 +56,7 @@ const PerformanceB = () => {
                         ref={textObjectRef}
                     >
                         "당신이 능력을 최대한 발휘해서 실행하는 데 주의 를 기울이고 있다면, <br /> 당신은
-                        <span className='highlight bg-clip-text bg-no-repeat bg-gradient-to-t from-[#d49a65] to-[#d49a65] bg-[size:100%_0%] text-transparent'>
+                        <span className='highlight bg-clip-text bg-no-repeat bg-gradient-to-t from-[#d49a65] to-[#d49a65] bg-[size:100%_0%] text-transparent px-1'>
                             성과 영역
                         </span>
                         에 있는 것이다."
