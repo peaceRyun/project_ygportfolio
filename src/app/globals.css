@@ -6,7 +6,8 @@
     --font-pretendard: 'Pretendard Variable', sans-serif;
     --font-poppins: 'Poppins', sans-serif;
 
-    --primary: #f6bb3b;
+    --primary: #d49a65;
+    --secondary: #fff7eb;
 
     --bp-mobileUp: 360px;
     --bp-mobile: 390px;
@@ -30,6 +31,8 @@
 
     /* primary-color */
     --color-primary: var(--primary);
+    /* seconary-color */
+    --color-secondary: var(--secondary);
 
     /* text-clamp 값 변수 지정 */
     --text-90-15vh-180: clamp(90px, 15vh, 180px);
@@ -216,7 +219,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #ee2c3c;
+    background-color: var(--primary);
     transform: scale(1);
     transition: 0.3s;
 }
@@ -227,7 +230,7 @@ body {
 }
 
 #cursor.cursor-style03:after {
-    background: rgba(238, 44, 60, 0.5);
+    background: rgba(212, 154, 101, 0.5);
     backdrop-filter: blur(3px);
     transform: scale(4.4);
 }
