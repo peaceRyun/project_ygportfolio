@@ -327,7 +327,7 @@ export const techstackdata = [
     {
         name: 'Html5',
         img: '/ui/icons/HTML5.svg',
-        desc: 'HTML5 & CSS을 활용한 웹 표준과 접근성을 고려한 마크업 작성이 가능합니다.',
+        desc: 'HTML5 & CSS3을 활용한 웹 표준과 접근성을 고려하여 마크업을 작성했습니다.',
     },
     {
         name: 'Css3',
