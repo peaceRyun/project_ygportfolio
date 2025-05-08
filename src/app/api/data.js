@@ -360,6 +360,11 @@ export const techstackdata = [
         desc: 'CSS를 유지보수성과 확장성을 고려한 구조로 설계하였습니다.',
     },
     {
+        name: 'Charkra UI',
+        img: '/ui/icons/chakraui.svg',
+        desc: '만들어진 CSS 컴포넌트를 활용하여 효율적으로 설계하였습니다.',
+    },
+    {
         name: 'Sass',
         img: '/ui/icons/Sass.svg',
         desc: 'CSS를 유지보수성과 확장성을 고려한 구조로 설계하였습니다.',

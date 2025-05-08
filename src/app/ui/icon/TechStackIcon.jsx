@@ -12,8 +12,8 @@ function TechStackIcon({ name }) {
     const { img, desc } = tech;
 
     return (
-        <div className='relative w-[50px] h-[50px] group flex items-center justify-center hover-shine'>
-            <Image src={img} alt={name} fill className='flex-shrink-0 object-contain image-shine' />
+        <div className='relative w-[50px] h-[50px] group flex items-center justify-center'>
+            <Image src={img} alt={name} fill className='flex-shrink-0 object-contain ' />
             <span
                 className='
           absolute bg-black text-white w-[200px] top-[-100px]
