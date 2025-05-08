@@ -78,7 +78,7 @@ const ProjectPage = () => {
                         </div>
                     </div>
                     <div className='detail-area flex-1'>
-                        <div className='h-[2000px] flex flex-col gap-8'>
+                        <div className='h-[4000px] flex flex-col gap-8'>
                             <section>
                                 <h5 className='font-bold text-2xl mb-4'>Period</h5>
                                 <p>
@@ -128,6 +128,17 @@ const ProjectPage = () => {
                                 <ul>
                                     {keyFeatures.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
+                                            <div className='relative rounded-3xl w-full h-[400px] overflow-hidden my-8'>
+                                                <video
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    playsInline
+                                                    src={item.video}
+                                                    alt={item.title}
+                                                    className='w-full h-full'
+                                                />
+                                            </div>
                                             <p className='mb-3 text-xl'>{item.title}</p>
                                             <div className='flex flex-col gap-1'>
                                                 <p>{item.desc1}</p>
