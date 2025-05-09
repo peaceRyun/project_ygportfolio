@@ -1,64 +1,64 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --font-pretendard: 'Pretendard Variable', sans-serif;
-    --font-poppins: 'Poppins', sans-serif;
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-pretendard: "Pretendard Variable", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
-    --primary: #d49a65;
-    --secondary: #fff7eb;
+  --primary: #d49a65;
+  --secondary: #fff7eb;
 
-    --bp-mobileUp: 360px;
-    --bp-mobile: 390px;
-    --bp-mobileDown: 600px;
+  --bp-mobileUp: 360px;
+  --bp-mobile: 390px;
+  --bp-mobileDown: 600px;
 
-    --bp-tabletUp: 601px;
-    --bp-tablet: 768px;
-    --bp-tabletDown: 1024px;
+  --bp-tabletUp: 601px;
+  --bp-tablet: 768px;
+  --bp-tabletDown: 1024px;
 
-    --bp-desktopUp: 1025px;
-    --bp-desktop: 1920px;
+  --bp-desktopUp: 1025px;
+  --bp-desktop: 1920px;
 
-    --lh-mobile: 150%;
-    --lh-pc-l: 130%;
-    --lh-pc-n: 160%;
+  --lh-mobile: 150%;
+  --lh-pc-l: 130%;
+  --lh-pc-n: 160%;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-    /* primary-color */
-    --color-primary: var(--primary);
-    /* seconary-color */
-    --color-secondary: var(--secondary);
+  /* primary-color */
+  --color-primary: var(--primary);
+  /* seconary-color */
+  --color-secondary: var(--secondary);
 
-    /* text-clamp 값 변수 지정 */
-    --text-90-15vh-180: clamp(90px, 15vh, 180px);
-    --text-73-16vh-136: clamp(73px, 16vh, 136px);
-    --text-40-16vh-73: clamp(40px, 16vh, 73px);
-    --text-40-5vh-60: clamp(40px, 5vh, 60px);
-    --text-38-4vh-44: clamp(38px, 4vh, 44px);
-    --text-32-3vh-40: clamp(32px, 3vh, 40px);
-    --text-8-2vh-20: clamp(8px, 2vh, 20px);
-    --text-12-1vw-20: clamp(12px, 1.5vw, 20px);
+  /* text-clamp 값 변수 지정 */
+  --text-90-15vh-180: clamp(90px, 15vh, 180px);
+  --text-73-16vh-136: clamp(73px, 16vh, 136px);
+  --text-40-16vh-73: clamp(40px, 16vh, 73px);
+  --text-40-5vh-60: clamp(40px, 5vh, 60px);
+  --text-38-4vh-44: clamp(38px, 4vh, 44px);
+  --text-32-3vh-40: clamp(32px, 3vh, 40px);
+  --text-8-2vh-20: clamp(8px, 2vh, 20px);
+  --text-12-1vw-20: clamp(12px, 1.5vw, 20px);
 
-    /* width-clamp 값 변수 지정 */
-    --width-150-30vh-250: clamp(150px, 30vh, 250px);
-    --width-100-30vh-204: clamp(100px, 15vh, 204px);
+  /* width-clamp 값 변수 지정 */
+  --width-150-30vh-250: clamp(150px, 30vh, 250px);
+  --width-100-30vh-204: clamp(100px, 15vh, 204px);
 
-    /* height-clamp 값 변수 지정 */
-    --height-72-15vh-144: clamp(72px, 15vh, 144px);
-    --height-58-10vh-108: clamp(58.41px, 10vh, 108.8px);
+  /* height-clamp 값 변수 지정 */
+  --height-72-15vh-144: clamp(72px, 15vh, 144px);
+  --height-58-10vh-108: clamp(58.41px, 10vh, 108.8px);
 
-    /* fonts 설정 */
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
-    --font-pretendard: var(--font-pretendard);
-    --font-poppins: var(--font-poppins);
+  /* fonts 설정 */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-pretendard: var(--font-pretendard);
+  --font-poppins: var(--font-poppins);
 
-    /* Breakpoint
+  /* Breakpoint
     --breakpoint-mobileUp: 360px;
     --breakpoint-mobile: 390px;
     --breakpoint-max-mobiledown: 599px;
@@ -70,260 +70,264 @@
     --breakpoint-desktopUp: 1024px;
     --breakpoint-max-desktop: 1920px; */
 
-    /* 행간  */
-    --line-height-mobile: 150%;
-    --line-height-pc-l: 130%;
-    --line-height-pc-n: 160%;
+  /* 행간  */
+  --line-height-mobile: 150%;
+  --line-height-pc-l: 130%;
+  --line-height-pc-n: 160%;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-pretendard);
-    font-weight: 400;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-pretendard);
+  font-weight: 400;
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* 스크롤 아이콘 관련 애니메이션 css 시작 */
 @keyframes moveChevron {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, 0vh);
-    }
-    25% {
-        opacity: 1;
-    }
-    33.3% {
-        opacity: 1;
-        transform: translate(-50%, 1.9vh);
-    }
-    66.6% {
-        opacity: 1;
-        transform: translate(-50%, 2.6vh);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-50%, 4vh) scale(0.5);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0vh);
+  }
+  25% {
+    opacity: 1;
+  }
+  33.3% {
+    opacity: 1;
+    transform: translate(-50%, 1.9vh);
+  }
+  66.6% {
+    opacity: 1;
+    transform: translate(-50%, 2.6vh);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 4vh) scale(0.5);
+  }
 }
 
 .icon-wrap {
-    width: 5vh;
-    height: 6vh;
+  width: 5vh;
+  height: 6vh;
 }
 
 .chevron {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 
-    width: 1.75vh;
-    height: 0.4vh;
+  width: 1.75vh;
+  height: 0.4vh;
 
-    opacity: 0;
-    animation: moveChevron 3s ease-out infinite;
+  opacity: 0;
+  animation: moveChevron 3s ease-out infinite;
 }
 
 .chevron:first-child {
-    animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 .chevron:nth-child(2) {
-    animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .chevron::before,
 .chevron::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    background: #2c3e50;
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #2c3e50;
 }
 
 .chevron::before {
-    left: 0;
-    transform: skewY(30deg);
+  left: 0;
+  transform: skewY(30deg);
 }
 
 .chevron::after {
-    right: 0;
-    transform: skewY(-30deg);
+  right: 0;
+  transform: skewY(-30deg);
 }
 /* 스크롤 아이콘 관련 애니메이션 css 끝 */
 
 /* 프로젝트 상세페이지 Wave animation 관련 시작*/
 @keyframes wave {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-25%);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .waveAni {
-    animation: wave 30s linear infinite;
-    background: url(../../public/projects/bg_wave.png) no-repeat;
+  animation: wave 30s linear infinite;
+  background: url(../../public/projects/bg_wave.png) no-repeat;
 }
 
 @media (max-width: 1280px) {
-    .waveAni {
-        animation: wave 25s linear infinite;
-    }
+  .waveAni {
+    animation: wave 25s linear infinite;
+  }
 }
 
 /* 커스텀 커서 스타일 */
 #cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #ee2c3c;
-    z-index: 201;
-    pointer-events: none; /* 마우스 이벤트가 커서 아래 요소에 전달되도록 설정 */
-    transition: opacity 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #ee2c3c;
+  z-index: 201;
+  pointer-events: none; /* 마우스 이벤트가 커서 아래 요소에 전달되도록 설정 */
+  transition: opacity 0.3s;
 }
 
 #cursor:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--primary);
-    transform: scale(1);
-    transition: 0.3s;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  transform: scale(1);
+  transition: 0.3s;
 }
 
 /* 프로젝트 페이지로 가지는 링크 hover시 */
 #cursor.cursor-style03 {
-    background: transparent;
+  background: transparent;
 }
 
 #cursor.cursor-style03:after {
-    background: rgba(212, 154, 101, 0.5);
-    backdrop-filter: blur(3px);
-    transform: scale(4.4);
+  background: rgba(212, 154, 101, 0.5);
+  backdrop-filter: blur(3px);
+  transform: scale(4.4);
 }
 
 #cursor.cursor-style03:before {
-    content: 'See';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+  content: "See";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 /* 일반 a태그 hover시 */
 #cursor.cursor-style02 {
-    background: transparent;
-    opacity: 0.8;
+  background: transparent;
+  opacity: 0.8;
 }
 
 #cursor.cursor-style02:after {
-    transition: 0.3s ease-in-out;
-    transform: scale(2);
+  transition: 0.3s ease-in-out;
+  transform: scale(2);
 }
 
 /* 프로젝트 페이지 링크 hover효과 */
 .link1 {
-    text-transform: uppercase;
-    border-bottom: 1px solid currentColor;
-    text-decoration: none;
-    color: black;
-    transition: color 0.5s ease-in-out;
-    z-index: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  color: black;
+  transition: color 0.5s ease-in-out;
+  z-index: 0;
 }
 .link1::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background-color: var(--primary);
-    transform: translate(-50%, -50%) translateX(-100%) skewX(-20deg);
-    transform-origin: 50% 50%;
-    transition: transform 0.5s ease-in-out;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background-color: var(--primary);
+  transform: translate(-50%, -50%) translateX(-100%) skewX(-20deg);
+  transform-origin: 50% 50%;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
 }
 .link1:hover {
-    color: white;
+  color: white;
 }
 .link1:hover::before {
-    transform: translate(-50%, -50%) translateX(0) skewX(-20deg);
+  transform: translate(-50%, -50%) translateX(0) skewX(-20deg);
 }
 
 /* 기술스택 아이콘 hover shine효과 */
 .hover-shine {
-    position: relative;
-    overflow: hidden; /* 가상 요소가 넘치는 것을 방지 */
+  position: relative;
+  overflow: hidden; /* 가상 요소가 넘치는 것을 방지 */
 }
 
 .hover-shine::before {
-    position: absolute;
-    top: 0;
-    left: -75%; /* 시작 위치 */
-    z-index: 2;
-    display: block;
-    content: '';
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
-    transform: skewX(-25deg);
-    opacity: 0; /* 초기 투명도 */
+  position: absolute;
+  top: 0;
+  left: -75%; /* 시작 위치 */
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  opacity: 0; /* 초기 투명도 */
 }
 
 .hover-shine:hover::before {
-    animation: shine 0.75s ease-in-out; /* 애니메이션 적용 */
+  animation: shine 0.75s ease-in-out; /* 애니메이션 적용 */
 }
 
 @keyframes shine {
-    0% {
-        opacity: 1;
-        left: -75%; /* 시작 위치에서 투명도 1 */
-    }
-    40% {
-        opacity: 1; /* 40% 지점까지 투명도 유지 */
-    }
-    100% {
-        left: 125%; /* 끝 위치 */
-        opacity: 0; /* 끝 지점 투명도 0 */
-    }
+  0% {
+    opacity: 1;
+    left: -75%; /* 시작 위치에서 투명도 1 */
+  }
+  40% {
+    opacity: 1; /* 40% 지점까지 투명도 유지 */
+  }
+  100% {
+    left: 125%; /* 끝 위치 */
+    opacity: 0; /* 끝 지점 투명도 0 */
+  }
 }
 
 /* 이미지 자체에 대한 스타일 (필요에 따라 추가) */
