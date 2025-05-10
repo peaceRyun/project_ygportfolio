@@ -8,7 +8,7 @@ const Footer = () => {
         <footer>
             <div
                 id='contact'
-                className='relative w-full h-screen overflow-hidden flex flex-col items-center justify-center gap-20'
+                className='relative w-full h-screen overflow-hidden flex flex-col items-center justify-center gap-15'
             >
                 <div className='relative flex flex-col gap-10 items-center w-[800px] p-6 text-center '>
                     <p className='font-poppins text-5xl font-bold'>감사합니다.</p>
