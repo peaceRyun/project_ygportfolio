@@ -1,4 +1,3 @@
-import AboutOne from './components/aboutone/AboutOne';
 import PerformanceB from './components/banner/PerformanceB';
 import Intro from './components/intro/Intro';
 import ProjectList from './components/project/ProjectList';
@@ -12,7 +11,6 @@ const HomePage = () => {
                 <Intro />
                 <PerformanceB />
                 <ProjectList />
-                <AboutOne />
             </main>
         </>
     );

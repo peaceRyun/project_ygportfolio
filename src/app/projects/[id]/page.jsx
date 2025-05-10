@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { RxArrowTopRight } from 'react-icons/rx';
 
+const secStyle = 'relative bg-secondary rounded-xl p-4';
+
 const ProjectPage = () => {
     const params = useParams();
     const paramsId = parseInt(params.id);
@@ -93,13 +95,22 @@ const ProjectPage = () => {
                     </div>
                     <div className='detail-area flex-1'>
                         <div className='h-[4000px] flex flex-col gap-8'>
-                            <section>
-                                <h5 className='font-bold text-2xl mb-4'>Period</h5>
+                            <section className={`${secStyle}`}>
+                                <h5 className='absolute top-0 left-0 bg-white p-2 rounded-br-2xl font-bold text-2xl mb-4'>
+                                    <div className='absolute top-0 right-[-14px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                    Period
+                                    <div className='absolute bottom-[-14px] left-0 w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                </h5>
+                                <div className='w-full h-[30px]'></div>
                                 <p>
                                     <span>{period_start}</span> ~ <span>{period_end}</span>
                                 </p>
                             </section>
-                            <section>
+                            <section className={`${secStyle}`}>
                                 <h5 className='font-bold text-2xl mb-4'>Tech Stack</h5>
                                 <ul className='flex gap-6'>
                                     {techStack.map((name, index) => (
@@ -110,7 +121,7 @@ const ProjectPage = () => {
                                     <li></li>
                                 </ul>
                             </section>
-                            <section>
+                            <section className={`${secStyle}`}>
                                 <h5 className='font-bold text-2xl mb-4'>Key Features</h5>
                                 <ul>
                                     {keyFeatures.map((item) => (
@@ -136,7 +147,7 @@ const ProjectPage = () => {
                                 </ul>
                             </section>
                             {requests ? (
-                                <section>
+                                <section className={`${secStyle}`}>
                                     <h5 className='font-bold text-2xl mb-4'>Request(Self)</h5>
                                     <ul>
                                         {requests.map((item, index) => (
@@ -148,7 +159,7 @@ const ProjectPage = () => {
                                 </section>
                             ) : null}
                             {process ? (
-                                <section>
+                                <section className={`${secStyle}`}>
                                     <h5 className='font-bold text-2xl mb-4'>Process</h5>
                                     <ul>
                                         {process.map((item) => (
@@ -163,7 +174,7 @@ const ProjectPage = () => {
                                 </section>
                             ) : null}
 
-                            <section>
+                            <section className={`${secStyle}`}>
                                 <h5 className='font-bold text-2xl mb-4'>Trouble Shooting</h5>
                                 <ul>
                                     {troubleShooting.map((item) => (
