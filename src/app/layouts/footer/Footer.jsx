@@ -1,25 +1,41 @@
-import ThreeInteraction from './components/ThreeInteraction';
+import Link from 'next/link';
+import Image from 'next/image';
+import Phone from '@/app/ui/icon/Phone';
+import Mail from '@/app/ui/icon/Mail';
 
 const Footer = () => {
     return (
         <footer>
-            <div id='contact' className='relative w-full h-screen  overflow-hidden '>
-                <div className='absolute top-0 left-0 font-poppins text-9xl pt-12 px-12 bg-primary w-full'>
-                    <p className='font-bold whitespace-nowrap uppercase'>get in touch</p>
+            <div
+                id='contact'
+                className='relative w-full h-screen overflow-hidden flex flex-col items-center justify-center gap-20'
+            >
+                <div className='relative flex flex-col gap-10 items-center w-[800px] p-6 text-center '>
+                    <p className='font-poppins text-5xl font-bold'>감사합니다.</p>
+                    <p className='font-pretendard'>
+                        프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로 도전하고, 항상 사용자의 관점에서
+                        생각하며 사용하기 좋은 서비스를 만들고 싶습니다.
+                    </p>
                 </div>
-
-                <ThreeInteraction />
-                <div className='absolute bottom-0 left-0 bg-primary w-full p-12'>
-                    <div className='w-2/3 flex flex-col gap-5 font-pretendard text-4xl'>
-                        <div className='w-full flex items-center justify-between'>
-                            <p className='font-bold'>tel</p>
-                            <p className='whitespace-nowrap'>010-2575-2721</p>
-                        </div>
-                        <div className='w-full flex items-center justify-between'>
-                            <p className=' font-bold'>email</p>
-                            <p className=' whitespace-nowrap'>xp7373@naver.com</p>
-                        </div>
-                    </div>
+                <div className='flex justify-between w-72'>
+                    <Link
+                        href='https://github.com/peaceRyun'
+                        className='relative block w-12 h-12 transition duration-500 ease-in-out hover:scale-150'
+                    >
+                        <Image src='/ui/icons/github.svg' alt='kyg 깃허브' fill></Image>
+                    </Link>
+                    <a
+                        href='mailto:xp7373@naver.com'
+                        className='relative block transition duration-500 ease-in-out hover:scale-150'
+                    >
+                        <Mail />
+                    </a>
+                    <a
+                        href='tel:010-2575-2721'
+                        className='relative block transition duration-500 ease-in-out hover:scale-150'
+                    >
+                        <Phone />
+                    </a>
                 </div>
             </div>
         </footer>
