@@ -104,7 +104,7 @@ const ProjectPage = () => {
                 <div className='absolute top-1/2 left-1/2 -translate-1/2 flex flex-col justify-center z-20 w-full mx-auto max-w-[1400px] px-12 max-lg:max-w-auto max-lg:px-8 max-sm:max-w-auto max-sm:px-5'>
                     <h3 className='text-white text-6xl font-bold'>{title}</h3>
                 </div>
-                <Image src={src} alt={alt} className='absolute top-0 left-0 z-0 blur-sm' fill priority />
+                <Image src={src} alt={alt} className='object-contain absolute top-0 left-0 z-0 blur-sm' fill priority />
                 <div className='absolute inset-0 w-full h-full z-10 bg-black opacity-60'></div>
                 <div className='waveAni absolute bottom-[-76px] left-0 w-[5000px] h-[247px] z-30 object-contain max-lg:bottom-0 max-lg:h-[160px]'></div>
             </section>

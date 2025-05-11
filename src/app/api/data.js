@@ -51,7 +51,7 @@ export const portfoliodata = [
         id: 2,
         title: 'Sunfish',
         titledetail: '스트레스 관리 모바일웹',
-        src: '/home/displayportfolio/thumb/sunfish.png',
+        src: '/home/displayportfolio/thumb/sunfish-thumbnail1.png',
         alt: '개인포폴241123',
         thumbstartdate: '2024.11',
         period_start: '2024.11.23',

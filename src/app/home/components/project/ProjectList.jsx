@@ -90,7 +90,13 @@ const ProjectList = () => {
                                 className='w-full h-full max-w-[56.25rem] max-md:max-w-[48rem] max-sm:max-w-[24.375rem] [@media_(max-height:800px)]:max-w-[48rem] [@media_(max-height:600px)]:max-w-[24.375rem]'
                             >
                                 <Link href={`/projects/${item.id}`}>
-                                    <div className='w-full h-auto relative rounded-xl group overflow-hidden aspect-video max-h-full'>
+                                    <div
+                                        className='w-full h-auto relative rounded-xl group overflow-hidden aspect-video max-h-full'
+                                        style={{
+                                            boxShadow:
+                                                '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
+                                        }}
+                                    >
                                         {ribbonType && (
                                             <div className='relative z-30'>
                                                 <Ribbon ribbonType={ribbonType}>{ribbonType}</Ribbon>
@@ -108,7 +114,7 @@ const ProjectList = () => {
                                         <img
                                             src={item.src}
                                             alt={item.alt}
-                                            className='object-cover block w-full h-full transition duration-300 ease-in-out group-hover:scale-[1.04] group-hover:cursor-pointer '
+                                            className='object-contain block w-full h-full transition duration-300 ease-in-out group-hover:scale-[1.04] group-hover:cursor-pointer '
                                         />
                                     </div>
                                 </Link>
