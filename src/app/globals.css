@@ -341,3 +341,10 @@ body {
     flex-shrink: 0;
     object-fit: contain;
 } */
+
+.webkit-transform-45 {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
