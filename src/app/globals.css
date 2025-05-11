@@ -6,8 +6,10 @@
     --font-pretendard: 'Pretendard Variable', sans-serif;
     --font-poppins: 'Poppins', sans-serif;
 
-    --primary: #d49a65;
-    --secondary: #fff7eb;
+    --primary: #a2b29f;
+    --primary-light: #bdd2b6;
+    --primary-dark: #798777;
+    --secondary: #f8ede3;
 
     --bp-mobileUp: 360px;
     --bp-mobile: 390px;
@@ -31,6 +33,9 @@
 
     /* primary-color */
     --color-primary: var(--primary);
+    --color-primary-light: var(--primary-light);
+    --color-primary-dark: var(--primary-dark);
+
     /* seconary-color */
     --color-secondary: var(--secondary);
 
@@ -204,7 +209,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    background-color: #ee2c3c;
+    background-color: var(--primary);
     z-index: 201;
     pointer-events: none; /* 마우스 이벤트가 커서 아래 요소에 전달되도록 설정 */
     transition: opacity 0.3s;
@@ -230,7 +235,7 @@ body {
 }
 
 #cursor.cursor-style03:after {
-    background: rgba(212, 154, 101, 0.5);
+    background: rgba(162, 178, 159, 0.5);
     backdrop-filter: blur(3px);
     transform: scale(4.4);
 }

@@ -5,9 +5,11 @@ import TechStackIcon from '@/app/ui/icon/TechStackIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useRef, useState } from 'react';
 import { RxArrowTopRight } from 'react-icons/rx';
 
-const secStyle = 'relative bg-secondary rounded-xl p-4';
+const secStyle = 'relative bg-primary-dark rounded-xl p-4 text-white';
+const h5Style = 'absolute top-0 left-0 bg-white pr-3 pb-3 rounded-br-2xl font-bold text-2xl w-[250px]';
 
 const ProjectPage = () => {
     const params = useParams();
@@ -37,6 +39,75 @@ const ProjectPage = () => {
         return <div>프로젝트 데이터를 불러오지 못했습니다.</div>;
     }
 
+    const cardRef = useRef(null);
+    const [style, setStyle] = useState({
+        transform: 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale(1)',
+        transition: 'transform 200ms cubic-bezier(.03,.98,.52,.99)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
+    });
+
+    const [isMouseOverLink, setIsMouseOverLink] = useState(false);
+
+    const settings = {
+        maxTilt: 15,
+        perspective: 1500,
+        scale: 1.01,
+        speed: 500,
+        easing: 'cubic-bezier(.03,.98,.52,.99)',
+    };
+
+    const onMouseMove = (e) => {
+        if (!cardRef.current || isMouseOverLink) {
+            return; // 링크 위에서는 기울기 적용 안 함
+        }
+
+        const card = cardRef.current;
+        const rect = card.getBoundingClientRect();
+
+        // 카드의 중심 좌표 계산
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // 마우스 위치와 카드 중심의 차이 계산
+        const mouseX = e.clientX - centerX;
+        const mouseY = e.clientY - centerY;
+
+        // 카드 크기에 비례하여 -1~1 범위로 정규화된 값 계산
+        const tiltX = (settings.maxTilt * mouseY) / (rect.height / 2);
+        const tiltY = (-settings.maxTilt * mouseX) / (rect.width / 2);
+
+        // 변형 스타일 설정
+        setStyle({
+            transform: `perspective(${settings.perspective}px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${settings.scale})`,
+            transition: `transform ${settings.speed}ms ${settings.easing}`,
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
+        });
+    };
+
+    const onMouseLeave = () => {
+        // 마우스가 카드에서 벗어나면 원래 상태로 복원
+        setStyle({
+            transform: 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale(1)',
+            transition: `transform ${settings.speed}ms ${settings.easing}`,
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
+        });
+        setIsMouseOverLink(false);
+    };
+
+    const handleLinkMouseEnter = () => {
+        setIsMouseOverLink(true);
+
+        setStyle({
+            transform: 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale(1)',
+            transition: `transform ${settings.speed}ms ${settings.easing}`,
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
+        });
+    };
+
+    const handleLinkMouseLeave = () => {
+        setIsMouseOverLink(false);
+    };
+
     return (
         <>
             <section className='relative w-full h-[587px] overflow-hidden max-lg:h-[510px]'>
@@ -44,15 +115,21 @@ const ProjectPage = () => {
                 <div className='absolute top-1/2 left-1/2 -translate-1/2 flex flex-col justify-center z-20 w-full mx-auto max-w-[1400px] px-12 max-lg:max-w-auto max-lg:px-8 max-sm:max-w-auto max-sm:px-5'>
                     <h3 className='text-white text-6xl font-bold'>{title}</h3>
                 </div>
-                <Image src={src} alt={alt} className='absolute top-0 left-0 z-0 blur-sm' fill />
+                <Image src={src} alt={alt} className='absolute top-0 left-0 z-0 blur-sm' fill priority />
                 <div className='absolute inset-0 w-full h-full z-10 bg-black opacity-60'></div>
                 <div className='waveAni absolute bottom-[-76px] left-0 w-[5000px] h-[247px] z-30 object-contain max-lg:bottom-0 max-lg:h-[160px]'></div>
             </section>
-            <main className='w-full max-w-[1400px] mx-auto relative z-10 pt-[7.5rem] px-12 max-lg:px-8 max-sm:px-5'>
+            <main className='w-full max-w-[1400px] mx-auto relative z-10 pt-[7.5rem] px-12 max-lg:px-8 max-sm:px-5 '>
                 <div className='contents-wrap flex gap-24 justify-between items-stretch max-lg:flex-col max-lg:gap-20'>
-                    <div className='info-area flex-1'>
-                        <div className='sticky top-[160px] left-0 w-full max-lg:relative max-lg:top-0'>
-                            <div className='flex flex-col items-start w-full gap-10'>
+                    <div className='info-area flex-1 '>
+                        <div className='sticky top-[150px] left-0 w-full max-lg:relative max-lg:top-0'>
+                            <div
+                                ref={cardRef}
+                                onMouseMove={onMouseMove}
+                                onMouseLeave={onMouseLeave}
+                                style={style}
+                                className='flex flex-col items-start w-full gap-10 bg-white rounded-lg shadow-lg p-12'
+                            >
                                 <h4 className='text-4xl font-semibold whitespace-pre-wrap'>{titledetail}</h4>
                                 <div className='flex flex-col gap-4'>
                                     <p className='font-medium'>Type</p>
@@ -77,6 +154,8 @@ const ProjectPage = () => {
                                         href={deploy}
                                         className='p-2 border-b-1 relative flex items-center justify-between gap-2.5 overflow-hidden w-full h-full link1'
                                         data-project-link='true'
+                                        onMouseEnter={handleLinkMouseEnter}
+                                        onMouseLeave={handleLinkMouseLeave}
                                     >
                                         Go Website
                                         <RxArrowTopRight size={20} />
@@ -85,34 +164,49 @@ const ProjectPage = () => {
                                         href={code}
                                         className='p-2 border-b-1 relative flex items-center justify-between gap-2.5 overflow-hidden w-full h-full link1'
                                         data-project-link='true'
+                                        onMouseEnter={handleLinkMouseEnter} // Added
+                                        onMouseLeave={handleLinkMouseLeave}
                                     >
                                         Go Github
                                         <RxArrowTopRight size={20} />
                                     </Link>
                                 </div>
+                                <div className='w-full h-[100px]'></div>
                             </div>
                         </div>
                     </div>
                     <div className='detail-area flex-1'>
                         <div className='h-[4000px] flex flex-col gap-8'>
                             <section className={`${secStyle}`}>
-                                <h5 className='absolute top-0 left-0 bg-white p-2 rounded-br-2xl font-bold text-2xl mb-4'>
-                                    <div className='absolute top-0 right-[-14px] w-4 h-4 rotate-270'>
+                                <h5 className={`${h5Style}`}>
+                                    <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
-                                    Period
-                                    <div className='absolute bottom-[-14px] left-0 w-4 h-4 rotate-270'>
+                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
+                                        Period
+                                    </span>
+                                    <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
                                 </h5>
-                                <div className='w-full h-[30px]'></div>
-                                <p>
+
+                                <p className='pt-15'>
                                     <span>{period_start}</span> ~ <span>{period_end}</span>
                                 </p>
                             </section>
                             <section className={`${secStyle}`}>
-                                <h5 className='font-bold text-2xl mb-4'>Tech Stack</h5>
-                                <ul className='flex gap-6'>
+                                <h5 className={`${h5Style}`}>
+                                    <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
+                                        Tech Stack
+                                    </span>
+                                    <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                </h5>
+                                <ul className='flex gap-6 pt-15'>
                                     {techStack.map((name, index) => (
                                         <li key={index} className='inline'>
                                             <TechStackIcon name={name} />
@@ -122,8 +216,18 @@ const ProjectPage = () => {
                                 </ul>
                             </section>
                             <section className={`${secStyle}`}>
-                                <h5 className='font-bold text-2xl mb-4'>Key Features</h5>
-                                <ul>
+                                <h5 className={`${h5Style}`}>
+                                    <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
+                                        Key Features
+                                    </span>
+                                    <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                </h5>
+                                <ul className='pt-15'>
                                     {keyFeatures.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
                                             <div className='relative rounded-3xl w-full h-[400px] overflow-hidden my-8'>
@@ -148,8 +252,18 @@ const ProjectPage = () => {
                             </section>
                             {requests ? (
                                 <section className={`${secStyle}`}>
-                                    <h5 className='font-bold text-2xl mb-4'>Request(Self)</h5>
-                                    <ul>
+                                    <h5 className={`${h5Style}`}>
+                                        <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
+                                            <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                        </div>
+                                        <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
+                                            Request(Self)
+                                        </span>
+                                        <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
+                                            <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                        </div>
+                                    </h5>
+                                    <ul className='pt-15'>
                                         {requests.map((item, index) => (
                                             <li key={index} className='inline mr-4'>
                                                 {item}
@@ -160,8 +274,18 @@ const ProjectPage = () => {
                             ) : null}
                             {process ? (
                                 <section className={`${secStyle}`}>
-                                    <h5 className='font-bold text-2xl mb-4'>Process</h5>
-                                    <ul>
+                                    <h5 className={`${h5Style}`}>
+                                        <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
+                                            <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                        </div>
+                                        <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
+                                            Process
+                                        </span>
+                                        <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
+                                            <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                        </div>
+                                    </h5>
+                                    <ul className='pt-15'>
                                         {process.map((item) => (
                                             <li key={item.title} className='inline mr-4'>
                                                 <p className='mb-3 text-xl'>{item.title}</p>
@@ -175,8 +299,18 @@ const ProjectPage = () => {
                             ) : null}
 
                             <section className={`${secStyle}`}>
-                                <h5 className='font-bold text-2xl mb-4'>Trouble Shooting</h5>
-                                <ul>
+                                <h5 className={`${h5Style}`}>
+                                    <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
+                                        Trouble Shooting
+                                    </span>
+                                    <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
+                                        <Image src='/ui/quarterpiece.svg' fill alt='piece' />
+                                    </div>
+                                </h5>
+                                <ul className='pt-15'>
                                     {troubleShooting.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
                                             <p className='mb-3 text-xl'>{item.title}</p>
