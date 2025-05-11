@@ -11,6 +11,8 @@
     --primary-dark: #798777;
     --secondary: #f8ede3;
 
+    --gray-light: #f3f3f3;
+
     --bp-mobileUp: 360px;
     --bp-mobile: 390px;
     --bp-mobileDown: 600px;
@@ -38,6 +40,9 @@
 
     /* seconary-color */
     --color-secondary: var(--secondary);
+
+    /* gray-scale */
+    --color-gray-light: var(--gray-light);
 
     /* text-clamp 값 변수 지정 */
     --text-90-15vh-180: clamp(90px, 15vh, 180px);

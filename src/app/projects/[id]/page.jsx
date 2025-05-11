@@ -1,15 +1,18 @@
 'use client';
 
 import { portfoliodata } from '@/app/api/data';
+import GitHub from '@/app/ui/icon/GitHub';
 import TechStackIcon from '@/app/ui/icon/TechStackIcon';
+import Web from '@/app/ui/icon/Web';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useRef, useState } from 'react';
 import { RxArrowTopRight } from 'react-icons/rx';
 
-const secStyle = 'relative bg-primary-dark rounded-xl p-4 text-white';
+const secStyle = 'relative bg-gray-light rounded-xl p-8 text-black';
 const h5Style = 'absolute top-0 left-0 bg-white pr-3 pb-3 rounded-br-2xl font-bold text-2xl w-[250px]';
+const titleWrapStyle = 'bg-gray-light rounded-4xl px-4 py-2 text-center w-full block';
 
 const ProjectPage = () => {
     const params = useParams();
@@ -94,20 +97,6 @@ const ProjectPage = () => {
         setIsMouseOverLink(false);
     };
 
-    const handleLinkMouseEnter = () => {
-        setIsMouseOverLink(true);
-
-        setStyle({
-            transform: 'perspective(1500px) rotateX(0deg) rotateY(0deg) scale(1)',
-            transition: `transform ${settings.speed}ms ${settings.easing}`,
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
-        });
-    };
-
-    const handleLinkMouseLeave = () => {
-        setIsMouseOverLink(false);
-    };
-
     return (
         <>
             <section className='relative w-full h-[587px] overflow-hidden max-lg:h-[510px]'>
@@ -128,11 +117,11 @@ const ProjectPage = () => {
                                 onMouseMove={onMouseMove}
                                 onMouseLeave={onMouseLeave}
                                 style={style}
-                                className='flex flex-col items-start w-full gap-10 bg-white rounded-lg shadow-lg p-12'
+                                className='flex flex-col items-start w-full gap-10 bg-gray-light rounded-lg shadow-lg p-12'
                             >
                                 <h4 className='text-4xl font-semibold whitespace-pre-wrap'>{titledetail}</h4>
                                 <div className='flex flex-col gap-4'>
-                                    <p className='font-medium'>Type</p>
+                                    <p className='font-bold'>Type</p>
                                     <ul className='flex gap-3 flex-wrap'>
                                         {type.map((item) => (
                                             <li
@@ -145,46 +134,45 @@ const ProjectPage = () => {
                                     </ul>
                                 </div>
                                 <div className='flex flex-col gap-4'>
-                                    <p className='font-medium'>Overview</p>
+                                    <p className='font-bold'>Overview</p>
                                     <p>{desc}</p>
                                 </div>
+                            </div>
 
-                                <div className='flex flex-col w-full'>
-                                    <Link
-                                        href={deploy}
-                                        className='p-2 border-b-1 relative flex items-center justify-between gap-2.5 overflow-hidden w-full h-full link1'
-                                        data-project-link='true'
-                                        onMouseEnter={handleLinkMouseEnter}
-                                        onMouseLeave={handleLinkMouseLeave}
-                                    >
+                            <div className='py-12 flex flex-col w-full'>
+                                <Link
+                                    href={deploy}
+                                    className='p-2 border-b-1 relative flex items-center justify-between gap-2.5 overflow-hidden w-full h-full link1'
+                                    data-project-link='true'
+                                >
+                                    <div className='flex items-center gap-2'>
+                                        <Web />
                                         Go Website
-                                        <RxArrowTopRight size={20} />
-                                    </Link>
-                                    <Link
-                                        href={code}
-                                        className='p-2 border-b-1 relative flex items-center justify-between gap-2.5 overflow-hidden w-full h-full link1'
-                                        data-project-link='true'
-                                        onMouseEnter={handleLinkMouseEnter} // Added
-                                        onMouseLeave={handleLinkMouseLeave}
-                                    >
+                                    </div>
+                                    <RxArrowTopRight size={20} />
+                                </Link>
+                                <Link
+                                    href={code}
+                                    className='p-2 border-b-1 relative flex items-center justify-between gap-2.5 overflow-hidden w-full h-full link1'
+                                    data-project-link='true'
+                                >
+                                    <div className='flex items-center gap-2'>
+                                        <GitHub />
                                         Go Github
-                                        <RxArrowTopRight size={20} />
-                                    </Link>
-                                </div>
-                                <div className='w-full h-[100px]'></div>
+                                    </div>
+                                    <RxArrowTopRight size={20} />
+                                </Link>
                             </div>
                         </div>
                     </div>
                     <div className='detail-area flex-1'>
-                        <div className='h-[4000px] flex flex-col gap-8'>
+                        <div className='flex flex-col gap-8'>
                             <section className={`${secStyle}`}>
                                 <h5 className={`${h5Style}`}>
                                     <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
-                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
-                                        Period
-                                    </span>
+                                    <span className={`${titleWrapStyle}`}>Period</span>
                                     <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
@@ -199,9 +187,7 @@ const ProjectPage = () => {
                                     <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
-                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
-                                        Tech Stack
-                                    </span>
+                                    <span className={`${titleWrapStyle}`}>Tech Stack</span>
                                     <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
@@ -220,9 +206,7 @@ const ProjectPage = () => {
                                     <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
-                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
-                                        Key Features
-                                    </span>
+                                    <span className={`${titleWrapStyle}`}>Key Features</span>
                                     <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
@@ -241,7 +225,7 @@ const ProjectPage = () => {
                                                     className='w-full h-full'
                                                 />
                                             </div>
-                                            <p className='mb-3 text-xl'>{item.title}</p>
+                                            <p className='mb-3 text-xl font-semibold'>{item.title}</p>
                                             <div className='flex flex-col gap-1'>
                                                 <p>{item.desc1}</p>
                                                 <p>{item.desc2}</p>
@@ -256,9 +240,7 @@ const ProjectPage = () => {
                                         <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                             <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                         </div>
-                                        <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
-                                            Request(Self)
-                                        </span>
+                                        <span className={`${titleWrapStyle}`}>Request(Self)</span>
                                         <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                             <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                         </div>
@@ -278,9 +260,7 @@ const ProjectPage = () => {
                                         <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                             <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                         </div>
-                                        <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
-                                            Process
-                                        </span>
+                                        <span className={`${titleWrapStyle}`}>Process</span>
                                         <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                             <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                         </div>
@@ -303,9 +283,7 @@ const ProjectPage = () => {
                                     <div className='absolute top-[-2px] right-[-14px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
-                                    <span className='bg-primary rounded-4xl px-4 py-2 text-center w-full block'>
-                                        Trouble Shooting
-                                    </span>
+                                    <span className={`${titleWrapStyle}`}>Trouble Shooting</span>
                                     <div className='absolute bottom-[-14px] left-[-2px] w-4 h-4 rotate-270'>
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
@@ -313,14 +291,14 @@ const ProjectPage = () => {
                                 <ul className='pt-15'>
                                     {troubleShooting.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
-                                            <p className='mb-3 text-xl'>{item.title}</p>
+                                            <p className='mb-3 text-xl font-semibold'>{item.title}</p>
                                             <div className='flex flex-col gap-2'>
                                                 <div className='flex flex-col gap-1'>
-                                                    <p>문제정의</p>
+                                                    <p className='font-bold'>문제정의</p>
                                                     <p>{item.problem}</p>
                                                 </div>
                                                 <div className='flex flex-col gap-1'>
-                                                    <p>해결과정</p>
+                                                    <p className='font-bold'>해결과정</p>
                                                     <p>{item.solution}</p>
                                                 </div>
                                             </div>
