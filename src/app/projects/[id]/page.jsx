@@ -1,6 +1,7 @@
 'use client';
 
 import { portfoliodata } from '@/app/api/data';
+import LoadScreen from '@/app/layouts/loadscreen/LoadScreen';
 import GitHub from '@/app/ui/icon/GitHub';
 import TechStackIcon from '@/app/ui/icon/TechStackIcon';
 import Web from '@/app/ui/icon/Web';
@@ -17,9 +18,7 @@ const titleWrapStyle = 'bg-gray-light rounded-4xl px-4 py-2 text-center w-full b
 const ProjectPage = () => {
     const params = useParams();
     const paramsId = parseInt(params.id);
-
     const projectData = portfoliodata.find((item) => item.id === paramsId);
-
     const {
         src,
         alt,
@@ -37,7 +36,6 @@ const ProjectPage = () => {
         requests,
         process,
     } = projectData;
-
     if (!projectData) {
         return <div>프로젝트 데이터를 불러오지 못했습니다.</div>;
     }
@@ -48,9 +46,7 @@ const ProjectPage = () => {
         transition: 'transform 200ms cubic-bezier(.03,.98,.52,.99)',
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
     });
-
     const [isMouseOverLink, setIsMouseOverLink] = useState(false);
-
     const settings = {
         maxTilt: 15,
         perspective: 1500,
@@ -58,7 +54,6 @@ const ProjectPage = () => {
         speed: 500,
         easing: 'cubic-bezier(.03,.98,.52,.99)',
     };
-
     const onMouseMove = (e) => {
         if (!cardRef.current || isMouseOverLink) {
             return; // 링크 위에서는 기울기 적용 안 함
@@ -86,7 +81,6 @@ const ProjectPage = () => {
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.3)',
         });
     };
-
     const onMouseLeave = () => {
         // 마우스가 카드에서 벗어나면 원래 상태로 복원
         setStyle({
@@ -97,8 +91,14 @@ const ProjectPage = () => {
         setIsMouseOverLink(false);
     };
 
+    const [isLoadOn, setIsLoadOn] = useState(true);
+
+    const handleLoad = () => {
+        setIsLoadOn(false);
+    };
     return (
         <>
+            {isLoadOn && <LoadScreen handleLoad={handleLoad} />}
             <section className='relative w-full h-[587px] overflow-hidden max-lg:h-[510px]'>
                 <h2 className='sr-only'>{title}</h2>
                 <div className='absolute top-1/2 left-1/2 -translate-1/2 flex flex-col justify-center z-20 w-full mx-auto max-w-[1400px] px-12 max-lg:max-w-auto max-lg:px-8 max-sm:max-w-auto max-sm:px-5'>
