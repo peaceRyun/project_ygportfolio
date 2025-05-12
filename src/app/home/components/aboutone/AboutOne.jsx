@@ -110,7 +110,7 @@ const AboutOne = () => {
     return (
         <section id='about' ref={sectionRef} className='relative w-full h-[1000vh]'>
             <div className='item w-full h-[1000vh] ' data-bgcolor='#000'>
-                <div className='w-full h-full px-12 text-white text-[11vw] font-poppins '>
+                <div className='w-full h-full px-12 text-white text-[11vw] font-clashv '>
                     <div className='pt-[200px] flex justify-between uppercase leading-[1] tracking-[-0.2vw]'>
                         <span className='Left text-left'>
                             <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

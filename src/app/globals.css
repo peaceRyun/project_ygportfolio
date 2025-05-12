@@ -5,6 +5,7 @@
     --foreground: #171717;
     --font-pretendard: 'Pretendard Variable', sans-serif;
     --font-poppins: 'Poppins', sans-serif;
+    --font-clashv: 'Clash Display', sans-serif;
 
     --primary: #a2b29f;
     --primary-light: #bdd2b6;
@@ -71,6 +72,7 @@
     --font-mono: var(--font-geist-mono);
     --font-pretendard: var(--font-pretendard);
     --font-poppins: var(--font-poppins);
+    --font-clashv: var(--font-clashv);
 
     /* Breakpoint
     --breakpoint-mobileUp: 360px;
