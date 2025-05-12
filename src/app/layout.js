@@ -5,6 +5,7 @@ import ClientLayout from './csrcomponents/ClientLayout';
 import CustomCursor from './ui/cursor/Cursor';
 import Header from './layouts/header/Header';
 import Footer from './layouts/footer/Footer';
+import LenisProvider from './csrcomponents/LenisProvider';
 
 export const metadata = {
     title: 'FrontEnd Dev KYG',
@@ -41,10 +42,12 @@ export default function RootLayout({ children }) {
             </head>
             <body>
                 <ClientLayout>
-                    <CustomCursor />
-                    <Header />
-                    {children}
-                    <Footer />
+                    <LenisProvider>
+                        <CustomCursor />
+                        <Header />
+                        {children}
+                        <Footer />
+                    </LenisProvider>
                 </ClientLayout>
             </body>
         </html>
