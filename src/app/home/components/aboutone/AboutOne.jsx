@@ -69,13 +69,13 @@ const AboutOne = () => {
         const prevSibling = target.previousElementSibling;
         const nextSibling = target.nextElementSibling;
 
-        gsap.to(target, { fontWeight: 200, duration: 0.5, ease: 'power2.out' });
+        gsap.to(target, { fontWeight: 200, duration: 1, ease: 'power2.out' });
 
         if (prevSibling) {
-            gsap.to(prevSibling, { fontWeight: 500, duration: 0.5, ease: 'power2.out' });
+            gsap.to(prevSibling, { fontWeight: 500, duration: 1, ease: 'power2.out' });
         }
         if (nextSibling) {
-            gsap.to(nextSibling, { fontWeight: 500, duration: 0.5, ease: 'power2.out' });
+            gsap.to(nextSibling, { fontWeight: 500, duration: 1, ease: 'power2.out' });
         }
 
         target.classList.remove('text-white');
@@ -100,7 +100,7 @@ const AboutOne = () => {
         if (parent) {
             const siblings = Array.from(parent.children);
             siblings.forEach((sibling) => {
-                gsap.to(sibling, { fontWeight: 700, duration: 0.5, ease: 'power2.out' });
+                gsap.to(sibling, { fontWeight: 700, duration: 1, ease: 'power2.out' });
                 sibling.classList.remove('text-gray-c-200', 'text-gray-c-500');
                 sibling.classList.add('text-white');
             });
@@ -112,7 +112,7 @@ const AboutOne = () => {
             <div className='item w-full h-[1000vh] ' data-bgcolor='#000'>
                 <div className='w-full h-full px-12 text-white text-[11vw] font-clashv '>
                     <div className='pt-[200px] flex justify-between uppercase leading-[1] tracking-[-0.2vw]'>
-                        <span className='Left text-left'>
+                        <span className='Left text-left pr-[1px]'>
                             <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                 a
                             </b>
@@ -150,7 +150,7 @@ const AboutOne = () => {
                                 o
                             </b>
                             <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                {' '}
+                                {'\u00A0'}
                             </b>
                             <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                 y
