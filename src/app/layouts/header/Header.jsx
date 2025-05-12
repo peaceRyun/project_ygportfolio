@@ -96,27 +96,27 @@ const Header = () => {
             >
                 <h1 className='sr-only'>YG's Portfolio</h1>
                 <div
-                    className={`header-bg absolute z-10 inset-0 transition duration-200 ease-in-out ${isScrolled ? 'bg-secondary opacity-90' : 'bg-transparent'}`}
+                    className={`header-bg absolute z-10 inset-0 transition duration-200 ease-in-out ${isScrolled ? 'bg-gray-light opacity-90' : 'bg-transparent'}`}
                 ></div>
                 <div className='nav-inner relative w-full flex items-center justify-between z-20'>
-                    <Link href='/' className='font-poppins font-bold text-lg ml-[3.125rem] text-primary-dark'>
+                    <Link href='/' className={`font-poppins font-bold text-lg ml-[3.125rem] ${textColorClass}`}>
                         YG's Portfolio
                     </Link>
                     <div className={`flex items-center text-md ${textColorClass}`}>
                         <Link
                             href='/#projects'
                             onClick={handleProjectsClick}
-                            className='py-4 px-5 hover:text-primary-light'
+                            className='py-4 px-5 hover:text-primary-dark'
                         >
                             Projects
                         </Link>
-                        <Link href='/#about' onClick={handleAboutClick} className='py-4 px-5 hover:text-primary-light'>
+                        <Link href='/#about' onClick={handleAboutClick} className='py-4 px-5 hover:text-primary-dark'>
                             About
                         </Link>
                         <Link
                             href='#contact'
                             onClick={handleContactClick}
-                            className='py-4 px-5 hover:text-primary-light'
+                            className='py-4 px-5 hover:text-primary-dark'
                         >
                             Contact
                         </Link>

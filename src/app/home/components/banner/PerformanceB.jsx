@@ -44,7 +44,7 @@ const PerformanceB = () => {
         };
     }, []);
     return (
-        <section className='bg-gray-light relative z-30'>
+        <section className='bg-primary relative z-30'>
             <h2 className='sr-only'>performanceB</h2>
             <div
                 className='textBox w-full h-screen sticky top-0 flex items-center justify-center leading-normal px-12 max-sm:px-4 max-lg:px-8'
