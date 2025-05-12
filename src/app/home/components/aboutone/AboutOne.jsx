@@ -22,6 +22,8 @@ const AboutOne = () => {
 
         const createdTriggers = [];
 
+        const createdAnimations = [];
+
         const items = gsap.utils.toArray('.item', sectionRef.current);
 
         const pinTrigger = ScrollTrigger.create({
@@ -58,9 +60,35 @@ const AboutOne = () => {
             });
             createdTriggers.push(colorTrigger);
         });
+        const herotitleAnimation = gsap.fromTo(
+            '.herotitle1',
+            { xPercent: 0 },
+            {
+                xPercent: 25,
+                duration: 10,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+            }
+        );
+        createdAnimations.push(herotitleAnimation);
+
+        const herotitletwoAnimation = gsap.fromTo(
+            '.herotitle2',
+            { xPercent: 0 },
+            {
+                xPercent: -25,
+                duration: 10,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1,
+            }
+        );
+        createdAnimations.push(herotitletwoAnimation);
 
         return () => {
             createdTriggers.forEach((trigger) => trigger.kill());
+            createdAnimations.forEach((anim) => anim.kill());
         };
     }, [sectionRef.current]);
 
@@ -113,15 +141,29 @@ const AboutOne = () => {
                 <div className='w-full h-full px-12 text-white text-[11vw] font-clashv '>
                     <div className='pt-[200px] flex justify-between uppercase leading-[1] tracking-[-0.2vw]'>
                         <span className='Left text-left pr-[1px]'>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                a
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                d
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                d
-                            </b>
+                            <span className='herotitle1 inline-block'>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    a
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    d
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    d
+                                </b>
+                            </span>
                             <br />
                             <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                 m
@@ -165,24 +207,50 @@ const AboutOne = () => {
                                 r
                             </b>
                             <br />
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                d
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                e
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                s
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                i
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                g
-                            </b>
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                n
-                            </b>
+                            <span className='herotitle2 inline-block'>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    d
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    e
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    s
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    i
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    g
+                                </b>
+                                <b
+                                    className={`${HeroB}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    n
+                                </b>
+                            </span>
                         </span>
                     </div>
                 </div>
