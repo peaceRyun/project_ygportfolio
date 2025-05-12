@@ -6,7 +6,7 @@ import PerformanceB from './components/banner/PerformanceB';
 import Intro from './components/intro/Intro';
 import ProjectList from './components/project/ProjectList';
 import About from './components/about/About';
-// import SecOpening from './components/secopening/SecOpening';
+import SecOpening from './components/secopening/SecOpening';
 
 const HomePage = () => {
     const [isLoadOn, setIsLoadOn] = useState(true);
@@ -22,7 +22,7 @@ const HomePage = () => {
             <main className={`${mainCont}`}>
                 <Intro />
                 <PerformanceB />
-                {/* <SecOpening title='project' /> */}
+                <SecOpening title='project' />
                 <ProjectList />
                 <About />
             </main>

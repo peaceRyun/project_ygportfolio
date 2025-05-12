@@ -106,6 +106,10 @@ body {
     font-weight: 400;
 }
 
+body.no-horizontal-scroll {
+    overflow-x: hidden !important;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

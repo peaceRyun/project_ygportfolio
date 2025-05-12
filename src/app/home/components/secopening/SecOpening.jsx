@@ -22,24 +22,29 @@ const SecOpening = ({ title }) => {
             },
         });
 
-        // 스케일 애니메이션
         tl.fromTo(element, { scale: 2 }, { scale: 1, ease: 'none' });
 
-        // 정리 함수
+        document.body.classList.add('no-horizontal-scroll');
+
         return () => {
+            document.body.classList.remove('no-horizontal-scroll');
             ScrollTrigger.getAll().forEach((t) => t.kill());
+            tl.kill();
         };
     }, []);
 
     return (
-        <div className='relative w-full h-[500vh]'>
-            <div className='sticky top-0 left-0 w-full h-screen flex items-center justify-center'>
+        <div className='relative w-full h-[300vh]'>
+            <div className='sticky top-0 left-0 w-full h-[70vh] flex items-center justify-center'>
                 <div
                     ref={titleRef}
-                    className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50'
+                    className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full text-center'
                 >
                     {titleArray.map((letter, index) => (
-                        <span key={index} className='inline-block uppercase font-bold text-[300px]'>
+                        <span
+                            key={index}
+                            className='inline-block uppercase font-bold text-[300px] max-lg:text-[200px] max-sm:text-[100px]'
+                        >
                             {letter}
                         </span>
                     ))}
