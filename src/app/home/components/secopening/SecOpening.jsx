@@ -6,9 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SecOpening = ({ title }) => {
+const SecOpening = ({ title, type }) => {
     const titleRef = useRef(null);
-    const titleArray = title.split('');
+    const titleArray = title.split('').map((char) => (char === ' ' ? '\u00a0' : char));
 
     useEffect(() => {
         const element = titleRef.current;
@@ -34,11 +34,11 @@ const SecOpening = ({ title }) => {
     }, []);
 
     return (
-        <div className='relative w-full h-[300vh]'>
+        <div className={`relative w-full h-[200vh] ${type === 'black' ? 'bg-black' : null}`}>
             <div className='sticky top-0 left-0 w-full h-[70vh] flex items-center justify-center'>
                 <div
                     ref={titleRef}
-                    className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full text-center'
+                    className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full text-center ${type === 'black' ? 'text-white' : null}`}
                 >
                     {titleArray.map((letter, index) => (
                         <span

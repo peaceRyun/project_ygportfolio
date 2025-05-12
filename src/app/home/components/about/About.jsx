@@ -3,6 +3,9 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import SecOpening from '../secopening/SecOpening';
+import AboutIntro from './components/AboutIntro';
+import MyValues from './components/MyValues';
 
 const HeroB = 'relative inline-block top-0 origin-center ml-[-8px] pl-[8px] will-change-fw text-left ';
 
@@ -136,9 +139,13 @@ const About = () => {
     };
 
     return (
-        <section id='about' ref={sectionRef} className='relative w-full h-[1000vh]'>
-            <div className='item w-full h-[1000vh] ' data-bgcolor='#000'>
-                <div className='w-full h-[300vh]'></div>
+        <section id='about' ref={sectionRef} className='relative w-full h-[1200vh]'>
+            <h2 className='sr-only'>About Me</h2>
+            <div className='item w-full h-[1200vh] ' data-bgcolor='#000'>
+                <div className='w-full h-[100vh]'></div>
+                <AboutIntro />
+                <SecOpening title='my values' type='black' />
+                <MyValues />
                 <div className='w-full h-screen px-12 text-white text-[11vw] font-clashv '>
                     <div className='pt-[200px] flex justify-between uppercase leading-[1] tracking-[-0.2vw]'>
                         <span className='Left text-left pr-[1px]'>
