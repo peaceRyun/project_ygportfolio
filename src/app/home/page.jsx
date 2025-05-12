@@ -5,6 +5,7 @@ import LoadScreen from '../layouts/loadscreen/LoadScreen';
 import PerformanceB from './components/banner/PerformanceB';
 import Intro from './components/intro/Intro';
 import ProjectList from './components/project/ProjectList';
+import AboutOne from './components/aboutone/AboutOne';
 
 const HomePage = () => {
     const [isLoadOn, setIsLoadOn] = useState(true);
@@ -21,6 +22,7 @@ const HomePage = () => {
                 <Intro />
                 <PerformanceB />
                 <ProjectList />
+                <AboutOne />
             </main>
         </>
     );

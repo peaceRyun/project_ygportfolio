@@ -12,6 +12,8 @@
     --secondary: #f8ede3;
 
     --gray-light: #f3f3f3;
+    --gray-c-200: rgb(183, 183, 183);
+    --gray-c-500: rgb(226, 226, 226);
 
     --bp-mobileUp: 360px;
     --bp-mobile: 390px;
@@ -43,6 +45,8 @@
 
     /* gray-scale */
     --color-gray-light: var(--gray-light);
+    --color-gray-c-200: var(--gray-c-200);
+    --color-gray-c-500: var(--gray-c-500);
 
     /* text-clamp 값 변수 지정 */
     --text-90-15vh-180: clamp(90px, 15vh, 180px);
@@ -347,4 +351,8 @@ body {
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+
+.will-change-fw {
+    will-change: font-weight;
 }
