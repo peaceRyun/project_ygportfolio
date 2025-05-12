@@ -4,8 +4,7 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-const HeroB =
-    'relative inline-block top-0 origin-center ml-[-8px] pl-[8px] will-change-fw text-left font-bold transition-[font-weight] duration-500 ease-in-out';
+const HeroB = 'relative inline-block top-0 origin-center ml-[-8px] pl-[8px] will-change-fw text-left ';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,43 +65,44 @@ const AboutOne = () => {
     }, [sectionRef.current]);
 
     const handleMouseEnter = (e) => {
-        const target = e.target; // hover된 <b> 요소
-        const prevSibling = target.previousElementSibling; // 이전 <b> 요소
-        const nextSibling = target.nextElementSibling; // 다음 <b> 요소
+        const target = e.target;
+        const prevSibling = target.previousElementSibling;
+        const nextSibling = target.nextElementSibling;
 
-        // 기본 font-bold 클래스 제거
-        target.classList.remove('font-bold');
+        gsap.to(target, { fontWeight: 200, duration: 0.5, ease: 'power2.out' });
+
         if (prevSibling) {
-            prevSibling.classList.remove('font-bold');
+            gsap.to(prevSibling, { fontWeight: 500, duration: 0.5, ease: 'power2.out' });
         }
         if (nextSibling) {
-            nextSibling.classList.remove('font-bold');
+            gsap.to(nextSibling, { fontWeight: 500, duration: 0.5, ease: 'power2.out' });
         }
 
-        // hover 상태에 따른 font-weight 클래스 추가
-        target.classList.add('font-extralight'); // 200
-        target.classList.add('text-gray-c-200'); // 200
+        target.classList.remove('text-white');
         if (prevSibling) {
-            prevSibling.classList.add('font-medium'); // 500
-            prevSibling.classList.add('text-gray-c-500'); // 500
+            prevSibling.classList.remove('text-white');
         }
         if (nextSibling) {
-            nextSibling.classList.add('font-medium'); // 500
-            nextSibling.classList.add('text-gray-c-500'); // 500
+            nextSibling.classList.remove('text-white');
+        }
+
+        target.classList.add('text-gray-c-200');
+        if (prevSibling) {
+            prevSibling.classList.add('text-gray-c-500');
+        }
+        if (nextSibling) {
+            nextSibling.classList.add('text-gray-c-500');
         }
     };
 
     const handleMouseLeave = (e) => {
-        // 마우스 이탈 시 모든 관련 요소의 font-weight 클래스를 기본값인 font-bold로 되돌립니다.
-        // hover된 요소의 부모 (span)를 찾아서 모든 자식 (b) 요소를 순회하며 초기화합니다.
         const parent = e.target.parentElement;
         if (parent) {
             const siblings = Array.from(parent.children);
             siblings.forEach((sibling) => {
-                // hover 상태에 따른 클래스 제거
-                sibling.classList.remove('font-extralight', 'font-medium');
-                // 기본 font-bold 클래스 추가
-                sibling.classList.add('font-bold');
+                gsap.to(sibling, { fontWeight: 700, duration: 0.5, ease: 'power2.out' });
+                sibling.classList.remove('text-gray-c-200', 'text-gray-c-500');
+                sibling.classList.add('text-white');
             });
         }
     };
