@@ -40,6 +40,15 @@ const Header = () => {
                 });
             }, 100);
         }
+        if (window.location.hash === '#about') {
+            setTimeout(() => {
+                gsap.to(window, {
+                    scrollTo: '#about',
+                    duration: 1,
+                    ease: 'power2.inOut',
+                });
+            }, 100);
+        }
     }, [pathname]);
 
     const handleProjectsClick = (e) => {
@@ -50,6 +59,19 @@ const Header = () => {
 
         gsap.to(window, {
             scrollTo: '#projects',
+            duration: 1,
+            ease: 'power2.inOut',
+        });
+    };
+
+    const handleAboutClick = (e) => {
+        if (pathname !== '/') {
+            return;
+        }
+        e.preventDefault(); // 기본 앵커 링크 동작 방지
+
+        gsap.to(window, {
+            scrollTo: '#about',
             duration: 1,
             ease: 'power2.inOut',
         });
@@ -74,7 +96,7 @@ const Header = () => {
             >
                 <h1 className='sr-only'>YG's Portfolio</h1>
                 <div
-                    className={`header-bg absolute z-10 inset-0 transition duration-200 ease-in-out ${isScrolled ? 'bg-gray-light opacity-90' : 'bg-transparent'}`}
+                    className={`header-bg absolute z-10 inset-0 transition duration-200 ease-in-out ${isScrolled ? 'bg-secondary opacity-90' : 'bg-transparent'}`}
                 ></div>
                 <div className='nav-inner relative w-full flex items-center justify-between z-20'>
                     <Link href='/' className='font-poppins font-bold text-lg ml-[3.125rem] text-primary-dark'>
@@ -87,6 +109,9 @@ const Header = () => {
                             className='py-4 px-5 hover:text-primary-light'
                         >
                             Projects
+                        </Link>
+                        <Link href='/#about' onClick={handleAboutClick} className='py-4 px-5 hover:text-primary-light'>
+                            About
                         </Link>
                         <Link
                             href='#contact'

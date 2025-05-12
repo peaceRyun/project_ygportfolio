@@ -8,7 +8,7 @@ const HeroB = 'relative inline-block top-0 origin-center ml-[-8px] pl-[8px] will
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutOne = () => {
+const About = () => {
     const sectionRef = useRef(null);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const AboutOne = () => {
         const pinTrigger = ScrollTrigger.create({
             trigger: sectionRef.current,
             start: 'top top',
-            pin: true,
+            // pin: true,
         });
         createdTriggers.push(pinTrigger);
 
@@ -39,7 +39,7 @@ const AboutOne = () => {
             const colorTrigger = ScrollTrigger.create({
                 trigger: item,
                 start: 'top 0%',
-                end: 'bottom 50%',
+                end: 'bottom 300%',
 
                 onEnter: () =>
                     gsap.to('.item', {
@@ -138,7 +138,8 @@ const AboutOne = () => {
     return (
         <section id='about' ref={sectionRef} className='relative w-full h-[1000vh]'>
             <div className='item w-full h-[1000vh] ' data-bgcolor='#000'>
-                <div className='w-full h-full px-12 text-white text-[11vw] font-clashv '>
+                <div className='w-full h-[300vh]'></div>
+                <div className='w-full h-screen px-12 text-white text-[11vw] font-clashv '>
                     <div className='pt-[200px] flex justify-between uppercase leading-[1] tracking-[-0.2vw]'>
                         <span className='Left text-left pr-[1px]'>
                             <span className='herotitle1 inline-block'>
@@ -259,4 +260,4 @@ const AboutOne = () => {
     );
 };
 
-export default AboutOne;
+export default About;
