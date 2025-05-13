@@ -3,14 +3,16 @@
 
 import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
+import { usePathname } from 'next/navigation';
 
 const LenisProvider = ({ children }) => {
     const lenisRef = useRef(null); // 타입 없이 useRef 사용
+    const pathname = usePathname();
 
     useEffect(() => {
         // Lenis 인스턴스 생성 (옵션은 필요에 따라 조절하세요)
         const lenis = new Lenis({
-            duration: 2.5,
+            duration: 3,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
             gestureDirection: 'vertical',
@@ -39,6 +41,12 @@ const LenisProvider = ({ children }) => {
             lenisRef.current = null;
         };
     }, []); // 빈 의존성 배열을 사용하여 마운트 시 한 번만 실행
+
+    useEffect(() => {
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        }
+    }, [pathname]);
 
     return <>{children}</>;
 };

@@ -8,7 +8,7 @@ import Web from '@/app/ui/icon/Web';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RxArrowTopRight } from 'react-icons/rx';
 
 const secStyle = 'relative bg-gray-light rounded-xl p-8 text-black';
@@ -39,6 +39,12 @@ const ProjectPage = () => {
     if (!projectData) {
         return <div>프로젝트 데이터를 불러오지 못했습니다.</div>;
     }
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.scrollTo(0, 0);
+        }
+    }, []);
 
     const cardRef = useRef(null);
     const [style, setStyle] = useState({
