@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-const cardWrap = 'w-full h-full rounded-2xl bg-white/90 pt-[8vh] px-[6vh] flex flex-col gap-5 text-left items-center';
+const cardWrap =
+    'w-full h-full rounded-2xl bg-white/90 pt-[8vh] px-[6vh] flex flex-col gap-5 text-left items-center hover-shine';
 
 const MyValues = () => {
     const [creativeGifSrc, setCreativeGifSrc] = useState('/home/about/photo-in-reveal.gif');
@@ -19,7 +20,7 @@ const MyValues = () => {
                 <div className={`${cardWrap}`}>
                     <h4 className='text-3xl whitespace-nowrap'>창의적으로</h4>
                     <div
-                        className='relative w-40 h-40 p-10'
+                        className='relative z-30 w-40 h-40 p-10'
                         onMouseEnter={() => setCreativeGifSrc(creativeHoverGif)}
                         onMouseLeave={() => setCreativeGifSrc('/home/about/photo-in-reveal.gif')}
                     >
@@ -43,7 +44,7 @@ const MyValues = () => {
                 <div className={`${cardWrap}`}>
                     <h4 className='text-3xl whitespace-nowrap'>계획적으로</h4>
                     <div
-                        className='relative w-40 h-40 p-10'
+                        className='relative z-30 w-40 h-40 p-10'
                         onMouseEnter={() => setPlanningGifSrc(planningHoverGif)}
                         onMouseLeave={() => setPlanningGifSrc('/home/about/demand-in-reveal.gif')}
                     >
@@ -67,7 +68,7 @@ const MyValues = () => {
                 <div className={`${cardWrap}`}>
                     <h4 className='text-3xl whitespace-nowrap'>발전하고 싶은 욕망</h4>
                     <div
-                        className='relative w-40 h-40 p-10'
+                        className='relative z-30 w-40 h-40 p-10'
                         onMouseEnter={() => setGrowthGifSrc(growthHoverGif)}
                         onMouseLeave={() => setGrowthGifSrc('/home/about/computer-display-in-reveal.gif')}
                     >
