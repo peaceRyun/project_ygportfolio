@@ -22,6 +22,7 @@ const Intro = () => {
         <div ref={ref} style={{ height: '100vh', position: 'relative' }}>
             <motion.div
                 style={{
+                    position: 'relative',
                     y: translateY,
                 }}
             >
@@ -39,6 +40,7 @@ const Intro = () => {
                                         src='/home/intro/seesaw-unscreen.gif'
                                         alt='코끼리 시소'
                                         fill
+                                        sizes='1'
                                     />
                                 </div>
                             </div>

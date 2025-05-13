@@ -23,7 +23,15 @@ const MyValues = () => {
                         onMouseEnter={() => setCreativeGifSrc(creativeHoverGif)}
                         onMouseLeave={() => setCreativeGifSrc('/home/about/photo-in-reveal.gif')}
                     >
-                        <Image src={creativeGifSrc} alt='photo.gif' fill size='100' className='object-cover' />
+                        <Image
+                            src={creativeGifSrc}
+                            alt='photo.gif'
+                            fill
+                            size='100'
+                            className='object-cover'
+                            unoptimized
+                            sizes='100vw'
+                        />
                     </div>
                     <p className='text-16-1vw-20'>
                         사용자의 관심, 직관적인 메세지 전달, 편안한 사용자 경험이 담긴 웹사이트에 다가가기 위해 최신
@@ -39,7 +47,15 @@ const MyValues = () => {
                         onMouseEnter={() => setPlanningGifSrc(planningHoverGif)}
                         onMouseLeave={() => setPlanningGifSrc('/home/about/demand-in-reveal.gif')}
                     >
-                        <Image src={planningGifSrc} alt='photo.gif' fill size='100' className='object-cover' />
+                        <Image
+                            src={planningGifSrc}
+                            alt='photo.gif'
+                            fill
+                            size='100'
+                            className='object-cover'
+                            unoptimized
+                            sizes='100vw'
+                        />
                     </div>
                     <p className='text-16-1vw-20'>
                         목표가 주어지면 곧바로 요구사항 정리, 단계별 과제 설정, 우선순위 정하기 행동을 통해 명확한
@@ -55,7 +71,15 @@ const MyValues = () => {
                         onMouseEnter={() => setGrowthGifSrc(growthHoverGif)}
                         onMouseLeave={() => setGrowthGifSrc('/home/about/computer-display-in-reveal.gif')}
                     >
-                        <Image src={growthGifSrc} alt='photo.gif' fill size='100' className='object-cover' />
+                        <Image
+                            src={growthGifSrc}
+                            alt='photo.gif'
+                            fill
+                            size='100'
+                            className='object-cover'
+                            unoptimized
+                            sizes='100vw'
+                        />
                     </div>
                     <p className='text-16-1vw-20'>
                         어제의 나보다 더 효율적인 코드, 직관적인 코드, 재사용성 높은 코드 작성에 만족을 느끼며
