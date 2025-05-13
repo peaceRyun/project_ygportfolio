@@ -18,7 +18,7 @@ const MyValues = () => {
         <ul className='w-full max-w-[1400px] h-[70vh] mx-auto px-2 flex items-start justify-between text-black text-xl leading-normal font-poppins gap-8'>
             <li className='flex-1 h-[500px]'>
                 <div className={`${cardWrap}`}>
-                    <h4 className='text-3xl whitespace-nowrap'>창의적으로</h4>
+                    <h4 className='text-3xl whitespace-nowrap font-bold'>창의적으로</h4>
                     <div
                         className='relative z-30 w-40 h-40 p-10'
                         onMouseEnter={() => setCreativeGifSrc(creativeHoverGif)}
@@ -42,7 +42,7 @@ const MyValues = () => {
             </li>
             <li className='flex-1 h-[500px]'>
                 <div className={`${cardWrap}`}>
-                    <h4 className='text-3xl whitespace-nowrap'>계획적으로</h4>
+                    <h4 className='text-3xl whitespace-nowrap font-bold'>계획적으로</h4>
                     <div
                         className='relative z-30 w-40 h-40 p-10'
                         onMouseEnter={() => setPlanningGifSrc(planningHoverGif)}
@@ -66,7 +66,7 @@ const MyValues = () => {
             </li>
             <li className='flex-1 h-[500px]'>
                 <div className={`${cardWrap}`}>
-                    <h4 className='text-3xl whitespace-nowrap'>발전하고 싶은 욕망</h4>
+                    <h4 className='text-3xl whitespace-nowrap font-bold'>발전하고 싶은 욕망</h4>
                     <div
                         className='relative z-30 w-40 h-40 p-10'
                         onMouseEnter={() => setGrowthGifSrc(growthHoverGif)}

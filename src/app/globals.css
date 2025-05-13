@@ -367,3 +367,27 @@ body.no-horizontal-scroll {
 .will-change-fw {
     will-change: font-weight;
 }
+
+/* coder path ani 관련 */
+#coder {
+    animation: dash 10s linear forwards;
+    stroke-dasharray: 5000;
+    stroke-dashoffset: 5000;
+}
+@keyframes dash {
+    to {
+        stroke-dashoffset: 10;
+    }
+}
+#colors {
+    opacity: 0;
+    animation: colorIn 5s 8s ease-out forwards;
+}
+@keyframes colorIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
