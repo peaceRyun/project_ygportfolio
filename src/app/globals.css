@@ -58,6 +58,7 @@
     --text-32-3vh-40: clamp(32px, 3vh, 40px);
     --text-8-2vh-20: clamp(8px, 2vh, 20px);
     --text-12-1vw-20: clamp(12px, 1.5vw, 20px);
+    --text-16-1vw-20: clamp(16px, 1.5vw, 20px);
 
     /* width-clamp 값 변수 지정 */
     --width-150-30vh-250: clamp(150px, 30vh, 250px);
