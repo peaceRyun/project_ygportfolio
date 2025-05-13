@@ -34,7 +34,7 @@ const SecOpening = ({ title, type }) => {
     }, []);
 
     return (
-        <div className={`relative w-full h-[200vh] ${type === 'black' ? 'bg-black' : null}`}>
+        <div className={`relative w-full h-[200vh] ${type === 'black' ? 'bg-#333' : null}`}>
             <div className='sticky top-0 left-0 w-full h-[70vh] flex items-center justify-center'>
                 <div
                     ref={titleRef}
@@ -43,7 +43,7 @@ const SecOpening = ({ title, type }) => {
                     {titleArray.map((letter, index) => (
                         <span
                             key={index}
-                            className='inline-block uppercase font-bold text-[300px] max-lg:text-[200px] max-sm:text-[100px]'
+                            className='inline-block uppercase font-bold text-[250px] max-lg:text-[200px] max-sm:text-[100px]'
                         >
                             {letter}
                         </span>

@@ -111,6 +111,10 @@ body.no-horizontal-scroll {
     overflow-x: hidden !important;
 }
 
+.text-black-important {
+    color: black !important;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

@@ -7,7 +7,7 @@ import SecOpening from '../secopening/SecOpening';
 import AboutIntro from './components/AboutIntro';
 import MyValues from './components/MyValues';
 
-const HeroB = 'relative inline-block top-0 origin-center ml-[-8px] pl-[8px] will-change-fw text-left ';
+const HeroB = 'relative inline-block top-0 origin-center ml-[-8px] pl-[8px] will-change-fw text-left text-white';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,13 +100,13 @@ const About = () => {
         const prevSibling = target.previousElementSibling;
         const nextSibling = target.nextElementSibling;
 
-        gsap.to(target, { fontWeight: 200, duration: 1, ease: 'power2.out' });
+        gsap.to(target, { fontWeight: 200.5, duration: 0.5, ease: 'power2.out' });
 
         if (prevSibling) {
-            gsap.to(prevSibling, { fontWeight: 500, duration: 1, ease: 'power2.out' });
+            gsap.to(prevSibling, { fontWeight: 500.5, duration: 0.5, ease: 'power2.out' });
         }
         if (nextSibling) {
-            gsap.to(nextSibling, { fontWeight: 500, duration: 1, ease: 'power2.out' });
+            gsap.to(nextSibling, { fontWeight: 500.5, duration: 0.5, ease: 'power2.out' });
         }
 
         target.classList.remove('text-white');
@@ -131,7 +131,7 @@ const About = () => {
         if (parent) {
             const siblings = Array.from(parent.children);
             siblings.forEach((sibling) => {
-                gsap.to(sibling, { fontWeight: 700, duration: 1, ease: 'power2.out' });
+                gsap.to(sibling, { fontWeight: 700.5, duration: 0.5, ease: 'power2.out' });
                 sibling.classList.remove('text-gray-c-200', 'text-gray-c-500');
                 sibling.classList.add('text-white');
             });
@@ -141,31 +141,34 @@ const About = () => {
     return (
         <section id='about' ref={sectionRef} className='relative w-full h-[1200vh]'>
             <h2 className='sr-only'>About Me</h2>
-            <div className='item w-full h-[1200vh] ' data-bgcolor='#000'>
+            <div className='item w-full h-[1200vh] ' data-bgcolor='#333'>
                 <div className='w-full h-[100vh]'></div>
                 <AboutIntro />
                 <SecOpening title='my values' type='black' />
                 <MyValues />
-                <div className='w-full h-screen px-12 text-white text-[11vw] font-clashv '>
-                    <div className='pt-[200px] flex justify-between uppercase leading-[1] tracking-[-0.2vw]'>
+                <div className='w-full h-screen px-12  text-[11vw] font-clashv '>
+                    <div className='pt-[200px] flex justify-between uppercase leading-none tracking-[-0.2vw]'>
                         <span className='Left text-left pr-[1px]'>
-                            <span className='herotitle1 inline-block'>
+                            <span className='herotitle1 inline-block relative top-[35px] overflow-visible'>
+                                <i className='absolute z-10 top-[20px] left-0 text-left blur-sm text-black-important overflow-visible'>
+                                    add
+                                </i>
                                 <b
-                                    className={`${HeroB}`}
+                                    className={`${HeroB} z-20`}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     a
                                 </b>
                                 <b
-                                    className={`${HeroB}`}
+                                    className={`${HeroB} z-20`}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     d
                                 </b>
                                 <b
-                                    className={`${HeroB}`}
+                                    className={`${HeroB} z-20`}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
                                 >
@@ -173,7 +176,11 @@ const About = () => {
                                 </b>
                             </span>
                             <br />
-                            <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <b
+                                className={`${HeroB} z-10`}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
                                 m
                             </b>
                             <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -215,7 +222,10 @@ const About = () => {
                                 r
                             </b>
                             <br />
-                            <span className='herotitle2 inline-block'>
+                            <span className='herotitle2 inline-block relative z-20 top-[-35px]'>
+                                <i className='absolute top-[-20px] left-0 text-left blur-sm text-black-important overflow-visible'>
+                                    design
+                                </i>
                                 <b
                                     className={`${HeroB}`}
                                     onMouseEnter={handleMouseEnter}
