@@ -41,6 +41,7 @@ const Intro = () => {
                                         alt='코끼리 시소'
                                         fill
                                         sizes='1'
+                                        unoptimized
                                     />
                                 </div>
                             </div>
