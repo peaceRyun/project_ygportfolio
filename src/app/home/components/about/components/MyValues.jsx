@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-const cardWrap = 'w-full h-full rounded-2xl bg-white/70 pt-[8vh] px-[6vh] flex flex-col gap-5 text-left items-center';
+const cardWrap = 'w-full h-full rounded-2xl bg-white/90 pt-[8vh] px-[6vh] flex flex-col gap-5 text-left items-center';
 
 const MyValues = () => {
     const [creativeGifSrc, setCreativeGifSrc] = useState('/home/about/photo-in-reveal.gif');
@@ -12,7 +12,7 @@ const MyValues = () => {
 
     const creativeHoverGif = '/home/about/photo-hover-pinch.gif';
     const planningHoverGif = '/home/about/demand-hover-click.gif';
-    const growthHoverGif = '/home/about/computer-display-hover.gif';
+    const growthHoverGif = '/home/about/computer-display-hover-angle.gif';
     return (
         <ul className='w-full max-w-[1400px] h-[70vh] mx-auto px-2 flex items-start justify-between text-black text-xl leading-normal font-poppins gap-8'>
             <li className='flex-1 h-[500px]'>
@@ -36,7 +36,7 @@ const MyValues = () => {
                     <h4 className='text-3xl whitespace-nowrap'>계획적으로</h4>
                     <div
                         className='relative w-40 h-40 p-10'
-                        onMouseEnter={() => setPlanningGifSrc(planningGifSrc)}
+                        onMouseEnter={() => setPlanningGifSrc(planningHoverGif)}
                         onMouseLeave={() => setPlanningGifSrc('/home/about/demand-in-reveal.gif')}
                     >
                         <Image src={planningGifSrc} alt='photo.gif' fill size='100' className='object-cover' />
@@ -52,7 +52,7 @@ const MyValues = () => {
                     <h4 className='text-3xl whitespace-nowrap'>발전하고 싶은 욕망</h4>
                     <div
                         className='relative w-40 h-40 p-10'
-                        onMouseEnter={() => setGrowthGifSrc(growthGifSrc)}
+                        onMouseEnter={() => setGrowthGifSrc(growthHoverGif)}
                         onMouseLeave={() => setGrowthGifSrc('/home/about/computer-display-in-reveal.gif')}
                     >
                         <Image src={growthGifSrc} alt='photo.gif' fill size='100' className='object-cover' />
