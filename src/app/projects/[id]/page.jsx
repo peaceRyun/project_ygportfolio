@@ -5,15 +5,17 @@ import LoadScreen from '@/app/layouts/loadscreen/LoadScreen';
 import GitHub from '@/app/ui/icon/GitHub';
 import TechStackIcon from '@/app/ui/icon/TechStackIcon';
 import Web from '@/app/ui/icon/Web';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { RxArrowTopRight } from 'react-icons/rx';
 
-const secStyle = 'relative bg-gray-light rounded-xl p-8 text-black';
+const secStyle = 'relative bg-secondary rounded-xl p-8 text-black';
 const h5Style = 'absolute top-0 left-0 bg-white pr-3 pb-3 rounded-br-2xl font-bold text-2xl w-[250px]';
-const titleWrapStyle = 'bg-gray-light rounded-4xl px-4 py-2 text-center w-full block';
+const titleWrapStyle = 'bg-primary-light rounded-4xl px-4 py-2 text-center w-full block';
 
 const ProjectPage = () => {
     const params = useParams();
@@ -45,6 +47,79 @@ const ProjectPage = () => {
             window.scrollTo(0, 0);
         }
     }, []);
+
+    useEffect(() => {
+        const glowInElements = document.querySelectorAll('.glowIn');
+
+        glowInElements.forEach((element) => {
+            // 이미 처리된 요소인지 확인 (다시 렌더링될 때 중복 적용 방지)
+            if (element.getAttribute('data-glow-applied')) {
+                return;
+            }
+
+            const text = element.textContent;
+            element.textContent = ''; // 기존 텍스트를 비웁니다.
+
+            const letters = text.split('');
+
+            letters.forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.style.animationDelay = `${index * 0.5}s`; // 각 글자에 순차적인 animation-delay 적용
+                element.append(span);
+            });
+
+            // 처리 완료 표시
+            element.setAttribute('data-glow-applied', 'true');
+        });
+    }, [title]);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        function createTypingAnimation(element, message) {
+            if (element.dataset.animated === 'true') return;
+
+            element.textContent = '';
+            element.dataset.animated = 'true';
+
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 70%',
+                    once: true,
+                },
+            });
+
+            let chars = message.split('');
+            chars.forEach((char, index) => {
+                timeline.add(() => {
+                    element.textContent += char;
+                }, index * 0.05);
+            });
+
+            timeline.to(element, {
+                borderRight: '0.5rem solid transparent',
+                repeat: -1,
+                yoyo: true,
+                duration: 0.8,
+            });
+
+            return timeline;
+        }
+
+        keyFeatures.forEach((item, index) => {
+            const element = document.getElementById(`dynamic-heading-${index}`);
+            if (element) {
+                createTypingAnimation(element, item.title);
+            }
+        });
+
+        // 컴포넌트 언마운트 시 정리
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, [keyFeatures]);
 
     const cardRef = useRef(null);
     const [style, setStyle] = useState({
@@ -102,13 +177,14 @@ const ProjectPage = () => {
     const handleLoad = () => {
         setIsLoadOn(false);
     };
+
     return (
         <>
             {isLoadOn && <LoadScreen handleLoad={handleLoad} />}
             <section className='relative w-full h-[587px] overflow-hidden max-lg:h-[510px]'>
                 <h2 className='sr-only'>{title}</h2>
                 <div className='absolute top-1/2 left-1/2 -translate-1/2 flex flex-col justify-center z-20 w-full mx-auto max-w-[1400px] px-12 max-lg:max-w-auto max-lg:px-8 max-sm:max-w-auto max-sm:px-5'>
-                    <h3 className='text-white text-6xl font-bold'>{title}</h3>
+                    <h3 className='text-white text-6xl font-bold glowIn'>{title}</h3>
                 </div>
                 <Image src={src} alt={alt} className='object-contain absolute top-0 left-0 z-0 blur-sm' fill priority />
                 <div className='absolute inset-0 w-full h-full z-10 bg-black opacity-60'></div>
@@ -123,7 +199,7 @@ const ProjectPage = () => {
                                 onMouseMove={onMouseMove}
                                 onMouseLeave={onMouseLeave}
                                 style={style}
-                                className='flex flex-col items-start w-full gap-10 bg-gray-light rounded-lg shadow-lg p-12'
+                                className='flex flex-col items-start w-full gap-10 bg-secondary rounded-lg shadow-lg p-12'
                             >
                                 <h4 className='text-4xl font-semibold whitespace-pre-wrap'>{titledetail}</h4>
                                 <div className='flex flex-col gap-4'>
@@ -218,7 +294,7 @@ const ProjectPage = () => {
                                     </div>
                                 </h5>
                                 <ul className='pt-15'>
-                                    {keyFeatures.map((item) => (
+                                    {keyFeatures.map((item, index) => (
                                         <li key={item.title} className='inline mr-4'>
                                             <div className='relative rounded-2xl w-full  overflow-hidden my-8'>
                                                 <div className='relative pb-[56.25%]'>
@@ -233,7 +309,14 @@ const ProjectPage = () => {
                                                     />
                                                 </div>
                                             </div>
-                                            <p className='mb-3 text-xl font-semibold'>{item.title}</p>
+                                            <p
+                                                className='mb-3 text-xl font-semibold overflow-hidden'
+                                                id={`dynamic-heading-${index}`}
+                                                data-message={item.title}
+                                                style={{
+                                                    borderRight: '0.5rem solid transparent',
+                                                }}
+                                            ></p>
                                             <div className='flex flex-col gap-1'>
                                                 <p>{item.desc1}</p>
                                                 <p>{item.desc2}</p>
@@ -276,7 +359,7 @@ const ProjectPage = () => {
                                     <ul className='pt-15'>
                                         {process.map((item) => (
                                             <li key={item.title} className='inline mr-4'>
-                                                <p className='mb-3 text-xl'>{item.title}</p>
+                                                <p className='mb-3 text-xl font-bold'>{item.title}</p>
                                                 <div className='flex flex-col gap-1'>
                                                     <p className='whitespace-pre-wrap'>{item.desc}</p>
                                                 </div>
@@ -299,8 +382,8 @@ const ProjectPage = () => {
                                 <ul className='pt-15'>
                                     {troubleShooting.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
-                                            <p className='mb-3 text-xl font-semibold'>{item.title}</p>
-                                            <div className='flex flex-col gap-2'>
+                                            <p className='mb-8 text-xl font-semibold'>{item.title}</p>
+                                            <div className='flex flex-col gap-4'>
                                                 <div className='flex flex-col gap-1'>
                                                     <p className='font-bold'>문제정의</p>
                                                     <p>{item.problem}</p>
