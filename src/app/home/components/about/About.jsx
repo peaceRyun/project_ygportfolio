@@ -68,9 +68,9 @@ const About = () => {
     }, [sectionRef.current]);
 
     return (
-        <section id='about' ref={sectionRef} className='relative w-full h-[1200vh]'>
+        <section id='about' ref={sectionRef} className='relative w-full h-[1300vh]'>
             <h2 className='sr-only'>About Me</h2>
-            <div className='item w-full h-[1200vh] ' data-bgcolor='#333'>
+            <div className='item w-full h-[1300vh] ' data-bgcolor='#333'>
                 <div className='w-full h-[100vh]'></div>
                 <AboutIntro />
                 <SecOpening title='my values' type='black' />

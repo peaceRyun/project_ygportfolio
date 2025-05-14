@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const ulSpace = 'flex items-center justify-center gap-5 mt-14';
 
-const ImgSizeWrap = 'relative w-15 h-15';
+const ImgSizeWrap = 'relative w-15 h-15 max-lg:w-13 max-sm:w-10';
 
 const Skills = () => {
     return (
