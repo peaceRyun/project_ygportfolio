@@ -47,10 +47,10 @@ const PerformanceB = () => {
         <section className='bg-primary relative z-30'>
             <h2 className='sr-only'>performanceB</h2>
             <div
-                className='textBox w-full h-screen sticky top-0 flex items-center justify-center leading-normal px-12 max-sm:px-4 max-lg:px-8'
+                className='textBox w-full h-screen sticky top-0 flex items-center justify-center leading-normal '
                 ref={pinWrapRef}
             >
-                <div className='w-full'>
+                <div className='w-full max-w-[1400px] mx-auto max-sm:px-6 max-lg:px-12'>
                     <span
                         className='webkitSpan font-poppins font-black text-40-5vh-60 max-sm:text-32-3vh-40 max-lg:text-38-4vh-44 text-white/30 bg-clip-text bg-no-repeat bg-gradient-to-r from-white to-white bg-[size:0%_100%]'
                         ref={textObjectRef}
