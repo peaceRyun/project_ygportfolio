@@ -198,7 +198,7 @@ const ProjectPage = () => {
                                         <Image src='/ui/quarterpiece.svg' fill alt='piece' />
                                     </div>
                                 </h5>
-                                <ul className='flex gap-6 pt-15'>
+                                <ul className='flex flex-wrap gap-6 pt-15'>
                                     {techStack.map((name, index) => (
                                         <li key={index} className='inline'>
                                             <TechStackIcon name={name} />
@@ -220,16 +220,18 @@ const ProjectPage = () => {
                                 <ul className='pt-15'>
                                     {keyFeatures.map((item) => (
                                         <li key={item.title} className='inline mr-4'>
-                                            <div className='relative rounded-3xl w-full h-[400px] overflow-hidden my-8'>
-                                                <video
-                                                    autoPlay
-                                                    loop
-                                                    muted
-                                                    playsInline
-                                                    src={item.video}
-                                                    alt={item.title}
-                                                    className='w-full h-full'
-                                                />
+                                            <div className='relative rounded-2xl w-full  overflow-hidden my-8'>
+                                                <div className='relative pb-[56.25%]'>
+                                                    <video
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        playsInline
+                                                        src={item.video}
+                                                        alt={item.title}
+                                                        className='absolute top-0 left-0 w-full h-full object-cover'
+                                                    />
+                                                </div>
                                             </div>
                                             <p className='mb-3 text-xl font-semibold'>{item.title}</p>
                                             <div className='flex flex-col gap-1'>
