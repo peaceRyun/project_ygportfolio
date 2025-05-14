@@ -51,20 +51,26 @@ const AboutIntro = () => {
     return (
         <div ref={sectionRef} className='relative w-full h-[200vh]'>
             <div className=' w-full h-screen flex items-center justify-center'>
-                <div className='w-full max-w-[1400px] mx-auto max-lg:px-12 max-sm:px-6 flex items-center justify-between text-white text-5xl max-lg:text-3xl max-sm:text-xl gap-20 leading-normal font-poppins'>
-                    <div ref={leftTextRef} className='left opacity-0 flex-1'>
+                <div className='w-full max-w-[1400px] mx-auto max-lg:px-12 max-sm:px-6 flex items-center justify-between text-white text-5xl max-lg:text-3xl max-sm:text-xl gap-[1vw] leading-normal font-poppins'>
+                    <div ref={leftTextRef} className='left opacity-0 flex-1 whitespace-nowrap'>
                         <b>어떤</b> 프론트엔드 개발자
                         <br />
                         원하신가요?
                     </div>
                     <div ref={rightTextRef} className='right opacity-0 flex-1'>
-                        <b>성실</b>하게 일하고,
+                        <span className='whitespace-nowrap'>
+                            <b>성실</b>하게 일하고,
+                        </span>
                         <br />
                         <br />
-                        <b>집요</b>하게 문제해결을 찾고,
+                        <span className='whitespace-nowrap'>
+                            <b>집요</b>하게 문제해결을 찾고,
+                        </span>
                         <br />
                         <br />
-                        <b>열정</b>있는 신입을 찾으신다면...
+                        <span className='whitespace-nowrap'>
+                            <b>열정</b>있는 신입을 찾으신다면...
+                        </span>
                     </div>
                 </div>
             </div>

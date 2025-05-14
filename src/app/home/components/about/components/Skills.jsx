@@ -6,7 +6,7 @@ const ImgSizeWrap = 'relative w-15 h-15';
 
 const Skills = () => {
     return (
-        <div className='w-full h-screen max-w-[1400px] mx-auto text-white'>
+        <div className='relative w-full h-screen max-w-[1400px] mx-auto text-white'>
             <div className='flex flex-col gap-15'>
                 <h3 className='text-8xl font-semibold font-poppins uppercase  w-full text-center max-lg:text-6xl max-sm:text-4xl'>
                     skills
