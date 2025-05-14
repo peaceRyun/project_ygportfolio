@@ -8,7 +8,9 @@ const Skills = () => {
     return (
         <div className='w-full h-screen max-w-[1400px] mx-auto text-white'>
             <div className='flex flex-col gap-15'>
-                <h3 className='text-8xl font-semibold font-poppins uppercase  w-full text-center'>skills</h3>
+                <h3 className='text-8xl font-semibold font-poppins uppercase  w-full text-center max-lg:text-6xl max-sm:text-4xl'>
+                    skills
+                </h3>
                 <ul className='flex flex-col gap-20 max-lg:px-12 max-sm:px-6'>
                     <li className='relative uppercase text-4xl w-full text-center max-lg:text-2xl max-sm:text-xl'>
                         <h4 className='relative z-10 bg-[#333] inline px-10'>디자인 & 협업 툴</h4>

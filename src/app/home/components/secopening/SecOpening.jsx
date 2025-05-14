@@ -22,7 +22,7 @@ const SecOpening = ({ title, type }) => {
             },
         });
 
-        tl.fromTo(element, { scale: 2 }, { scale: 1, ease: 'none' });
+        tl.fromTo(element, { scale: 3 }, { scale: 1, ease: 'none' });
 
         document.body.classList.add('no-horizontal-scroll');
 
@@ -43,7 +43,7 @@ const SecOpening = ({ title, type }) => {
                     {titleArray.map((letter, index) => (
                         <span
                             key={index}
-                            className='inline-block uppercase font-bold text-[250px] max-lg:text-[200px] max-sm:text-[100px]'
+                            className='inline-block uppercase font-bold text-[200px] max-lg:text-9xl max-sm:text-8xl'
                         >
                             {letter}
                         </span>

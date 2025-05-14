@@ -6,6 +6,8 @@ import { useState } from 'react';
 const cardWrap =
     'w-full h-full rounded-2xl bg-white/90 pt-[8vh] px-[6vh] flex flex-col gap-5 text-left items-center hover-shine';
 
+const ImgSizeWrap = 'relative z-30 w-40 h-40 p-10 max-lg:w-30 max-lg:h-30';
+
 const MyValues = () => {
     const [creativeGifSrc, setCreativeGifSrc] = useState('/home/about/photo-in-reveal.gif');
     const [planningGifSrc, setPlanningGifSrc] = useState('/home/about/demand-in-reveal.gif');
@@ -15,12 +17,12 @@ const MyValues = () => {
     const planningHoverGif = '/home/about/demand-hover-click.gif';
     const growthHoverGif = '/home/about/computer-display-hover-angle.gif';
     return (
-        <ul className='w-full max-w-[1400px] h-[70vh] mx-auto px-2 flex items-start justify-between text-black text-xl leading-normal font-poppins gap-8'>
+        <ul className='w-full max-w-[1024px] h-[70vh] mx-auto max-lg:px-12 max-sm:px-6 flex items-start justify-between text-black text-xl max-lg:text-lg leading-normal font-poppins gap-8'>
             <li className='flex-1 h-[500px]'>
                 <div className={`${cardWrap}`}>
                     <h4 className='text-3xl whitespace-nowrap font-bold'>창의적으로</h4>
                     <div
-                        className='relative z-30 w-40 h-40 p-10'
+                        className={`${ImgSizeWrap}`}
                         onMouseEnter={() => setCreativeGifSrc(creativeHoverGif)}
                         onMouseLeave={() => setCreativeGifSrc('/home/about/photo-in-reveal.gif')}
                     >
@@ -44,7 +46,7 @@ const MyValues = () => {
                 <div className={`${cardWrap}`}>
                     <h4 className='text-3xl whitespace-nowrap font-bold'>계획적으로</h4>
                     <div
-                        className='relative z-30 w-40 h-40 p-10'
+                        className={`${ImgSizeWrap}`}
                         onMouseEnter={() => setPlanningGifSrc(planningHoverGif)}
                         onMouseLeave={() => setPlanningGifSrc('/home/about/demand-in-reveal.gif')}
                     >
@@ -66,9 +68,9 @@ const MyValues = () => {
             </li>
             <li className='flex-1 h-[500px]'>
                 <div className={`${cardWrap}`}>
-                    <h4 className='text-3xl whitespace-nowrap font-bold'>발전하고 싶은 욕망</h4>
+                    <h4 className='text-3xl whitespace-nowrap font-bold'>발전 욕망</h4>
                     <div
-                        className='relative z-30 w-40 h-40 p-10'
+                        className={`${ImgSizeWrap}`}
                         onMouseEnter={() => setGrowthGifSrc(growthHoverGif)}
                         onMouseLeave={() => setGrowthGifSrc('/home/about/computer-display-in-reveal.gif')}
                     >

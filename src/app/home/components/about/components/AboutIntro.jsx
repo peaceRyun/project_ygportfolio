@@ -51,7 +51,7 @@ const AboutIntro = () => {
     return (
         <div ref={sectionRef} className='relative w-full h-[200vh]'>
             <div className=' w-full h-screen flex items-center justify-center'>
-                <div className='w-full max-w-[1400px] mx-auto px-2 flex items-center justify-between text-white text-5xl gap-20 leading-normal font-poppins'>
+                <div className='w-full max-w-[1400px] mx-auto max-lg:px-12 max-sm:px-6 flex items-center justify-between text-white text-5xl max-lg:text-3xl max-sm:text-xl gap-20 leading-normal font-poppins'>
                     <div ref={leftTextRef} className='left opacity-0 flex-1'>
                         <b>어떤</b> 프론트엔드 개발자
                         <br />
