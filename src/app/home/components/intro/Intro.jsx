@@ -42,6 +42,7 @@ const Intro = () => {
                                         fill
                                         sizes='1'
                                         unoptimized
+                                        priority
                                     />
                                 </div>
                             </div>
