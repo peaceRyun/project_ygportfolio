@@ -90,11 +90,11 @@ const AddMotion = () => {
     };
 
     return (
-        <div ref={addMotionRef} className='w-full h-screen px-12 text-[11vw] font-clashv'>
-            <div className='pt-[200px] flex justify-between uppercase leading-none tracking-[-0.2vw]'>
+        <div ref={addMotionRef} className='w-full h-auto px-12 text-[11vw] font-clashv'>
+            <div className='pt-[50px] flex justify-between uppercase leading-none tracking-[-0.2vw]'>
                 <span className='Left text-left pr-[1px]'>
-                    <span className='herotitle1 inline-block relative top-[35px] overflow-visible'>
-                        <i className='absolute z-10 top-[20px] left-0 text-left blur-sm text-black-important overflow-visible'>
+                    <span className='herotitle1 inline-block relative top-[2.5vw] overflow-visible z-10'>
+                        <i className='absolute z-20 top-[20px] left-0 text-left blur-sm text-black-important overflow-visible'>
                             add
                         </i>
                         <b className={`${HeroB} z-20`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -108,49 +108,55 @@ const AddMotion = () => {
                         </b>
                     </span>
                     <br />
-                    <b className={`${HeroB} z-10`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        m
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        o
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        t
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        i
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        o
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        n
-                    </b>
+                    <span className='flex'>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            m
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            o
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            t
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            i
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            o
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            n
+                        </b>
+                    </span>
                 </span>
-                <span className='Right mt-[11vw] text-right'>
+                <span className='Right mt-[11vw] text-right '>
                     <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         t
                     </b>
                     <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         o
                     </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        {'\u00A0'}
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        y
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        o
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        u
-                    </b>
-                    <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        r
-                    </b>
+
+                    <span className='relative max-lg:whitespace-nowrap max-lg:text-right max-lg:top-[-10px] '>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            {'\u00A0'}
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            y
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            o
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            u
+                        </b>
+                        <b className={`${HeroB}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            r
+                        </b>
+                    </span>
+
                     <br />
-                    <span className='herotitle2 inline-block relative z-20 top-[-35px]'>
+                    <span className='herotitle2 inline-block relative z-20 top-[-2.5vw] whitespace-nowrap'>
                         <i className='absolute top-[-20px] left-0 text-left blur-sm text-black-important overflow-visible'>
                             design
                         </i>
