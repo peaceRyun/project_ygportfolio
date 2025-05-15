@@ -1,12 +1,11 @@
 'use client';
 
 import { portfoliodata } from '@/app/api/data';
+import { useKeyFeatureTypingEffect } from '@/app/hooks/useGsap';
 import LoadScreen from '@/app/layouts/loadscreen/LoadScreen';
 import GitHub from '@/app/ui/icon/GitHub';
 import TechStackIcon from '@/app/ui/icon/TechStackIcon';
 import Web from '@/app/ui/icon/Web';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -74,52 +73,7 @@ const ProjectPage = () => {
         });
     }, [title]);
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        function createTypingAnimation(element, message) {
-            if (element.dataset.animated === 'true') return;
-
-            element.textContent = '';
-            element.dataset.animated = 'true';
-
-            const timeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 70%',
-                    once: true,
-                },
-            });
-
-            let chars = message.split('');
-            chars.forEach((char, index) => {
-                timeline.add(() => {
-                    element.textContent += char;
-                }, index * 0.05);
-            });
-
-            timeline.to(element, {
-                borderRight: '0.5rem solid transparent',
-                repeat: -1,
-                yoyo: true,
-                duration: 0.8,
-            });
-
-            return timeline;
-        }
-
-        keyFeatures.forEach((item, index) => {
-            const element = document.getElementById(`dynamic-heading-${index}`);
-            if (element) {
-                createTypingAnimation(element, item.title);
-            }
-        });
-
-        // 컴포넌트 언마운트 시 정리
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    }, [keyFeatures]);
+    useKeyFeatureTypingEffect(keyFeatures);
 
     const cardRef = useRef(null);
     const [style, setStyle] = useState({

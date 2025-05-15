@@ -3,8 +3,11 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { usePathname } from 'next/navigation';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// home page
 
 /**
  * About 섹션 효과
@@ -45,11 +48,20 @@ export const useAboutScrollEffect = (sectionRef) => {
  * Skills 컴포넌트 - HR 라인 애니메이션
  */
 export const useSkillsHrEffect = () => {
+    const pathname = usePathname();
+
     useEffect(() => {
+        // 기존 트리거 제거
+        const triggers = [];
+
         const hrWrappers = gsap.utils.toArray('.hr-wrapper');
 
         hrWrappers.forEach((wrapper) => {
-            gsap.from(wrapper, {
+            // ✅ 1. 초기 상태로 강제 리셋
+            gsap.set(wrapper, { width: '100%' });
+
+            // ✅ 2. 새 트리거 생성
+            const anim = gsap.from(wrapper, {
                 width: '0%',
                 ease: 'power2.out',
                 scrollTrigger: {
@@ -58,12 +70,14 @@ export const useSkillsHrEffect = () => {
                     once: true,
                 },
             });
+
+            triggers.push(anim.scrollTrigger);
         });
 
         return () => {
-            ScrollTrigger.getAll().forEach((st) => st.kill());
+            triggers.forEach((t) => t.kill());
         };
-    }, []);
+    }, [pathname]);
 };
 
 /**
@@ -166,4 +180,57 @@ export const useSecOpeningScrollEffect = (titleRef) => {
             tl.kill();
         };
     }, [titleRef]);
+};
+
+// project page
+
+/**
+ * Typing Animation
+ */
+export const useKeyFeatureTypingEffect = (keyFeatures = []) => {
+    const pathname = usePathname();
+
+    useEffect(() => {
+        const triggers = [];
+
+        function createTypingAnimation(element, message) {
+            element.textContent = '';
+            element.removeAttribute('data-animated');
+            element.dataset.animated = 'true';
+
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 70%',
+                    once: true,
+                },
+            });
+
+            message.split('').forEach((char, index) => {
+                timeline.add(() => {
+                    element.textContent += char;
+                }, index * 0.05);
+            });
+
+            timeline.to(element, {
+                borderRight: '0.5rem solid transparent',
+                repeat: -1,
+                yoyo: true,
+                duration: 0.8,
+            });
+
+            triggers.push(timeline.scrollTrigger);
+        }
+
+        keyFeatures.forEach((item, index) => {
+            const element = document.getElementById(`dynamic-heading-${index}`);
+            if (element) {
+                createTypingAnimation(element, item.title);
+            }
+        });
+
+        return () => {
+            triggers.forEach((t) => t.kill());
+        };
+    }, [pathname, keyFeatures]);
 };
