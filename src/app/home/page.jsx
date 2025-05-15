@@ -8,6 +8,7 @@ import ProjectList from './components/project/ProjectList';
 import About from './components/about/About';
 import SecOpening from './components/secopening/SecOpening';
 import LearningB from './components/banner/LearningB';
+import Study from './components/study/Study';
 
 const HomePage = () => {
     const [isLoadOn, setIsLoadOn] = useState(true);
@@ -28,6 +29,7 @@ const HomePage = () => {
                 <About />
                 <LearningB />
                 <SecOpening title='study' />
+                <Study />
             </main>
         </>
     );
