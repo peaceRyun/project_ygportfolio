@@ -10,8 +10,8 @@ const ImgSizeWrap = 'relative w-15 h-15 max-lg:w-13 max-sm:w-10';
 const Skills = () => {
     useSkillsHrEffect();
     return (
-        <div className='relative w-full h-screen max-w-[1400px] mx-auto text-[#00ADB5]'>
-            <div className='flex flex-col gap-45'>
+        <div className='relative w-full h-auto max-w-[1400px] mx-auto text-[#00ADB5]'>
+            <div className='flex flex-col gap-45 pb-10'>
                 <h3 className='text-8xl text-white font-semibold font-poppins uppercase  w-full text-center max-lg:text-6xl max-sm:text-4xl'>
                     skills
                 </h3>
