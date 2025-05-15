@@ -1,20 +1,46 @@
+'use client';
+
 import Image from 'next/image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ulSpace = 'flex items-center justify-center gap-5 mt-14';
 
 const ImgSizeWrap = 'relative w-15 h-15 max-lg:w-13 max-sm:w-10';
 
 const Skills = () => {
+    useEffect(() => {
+        const hrWrappers = gsap.utils.toArray('.hr-wrapper');
+
+        hrWrappers.forEach((wrapper) => {
+            gsap.from(wrapper, {
+                width: '0%',
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: 'top 75%',
+                    once: true,
+                },
+            });
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((st) => st.kill());
+        };
+    }, []);
     return (
-        <div className='relative w-full h-screen max-w-[1400px] mx-auto text-white'>
-            <div className='flex flex-col gap-15'>
-                <h3 className='text-8xl font-semibold font-poppins uppercase  w-full text-center max-lg:text-6xl max-sm:text-4xl'>
+        <div className='relative w-full h-screen max-w-[1400px] mx-auto text-[#00ADB5]'>
+            <div className='flex flex-col gap-45'>
+                <h3 className='text-8xl text-white font-semibold font-poppins uppercase  w-full text-center max-lg:text-6xl max-sm:text-4xl'>
                     skills
                 </h3>
-                <ul className='flex flex-col gap-20 max-lg:px-12 max-sm:px-6'>
+                <ul className='flex flex-col gap-30 max-lg:px-12 max-sm:px-6'>
                     <li className='relative uppercase text-4xl w-full text-center max-lg:text-2xl max-sm:text-xl'>
-                        <h4 className='relative z-10 bg-[#333] inline px-10'>디자인 & 협업 툴</h4>
-                        <div className='w-full absolute top-[20px] left-0'>
+                        <h4 className='relative z-10 bg-[#222831] inline px-10'>디자인 & 협업 툴</h4>
+                        <div className='hr-wrapper w-full absolute top-[20px] left-0'>
                             <hr></hr>
                         </div>
                         <ul className={`${ulSpace}`}>
@@ -36,8 +62,8 @@ const Skills = () => {
                         </ul>
                     </li>
                     <li className='relative uppercase text-4xl w-full text-center max-lg:text-2xl max-sm:text-xl'>
-                        <h4 className='relative z-10 bg-[#333] inline px-10'>코드 툴 : 효과적으로 구현하기 위해</h4>
-                        <div className='w-full absolute top-[20px] left-0'>
+                        <h4 className='relative z-10 bg-[#222831] inline px-10'>코드 툴 : 효과적으로 구현하기 위해</h4>
+                        <div className='hr-wrapper w-full absolute top-[20px] left-0'>
                             <hr></hr>
                         </div>
                         <ul className={`${ulSpace}`}>
@@ -74,8 +100,8 @@ const Skills = () => {
                         </ul>
                     </li>
                     <li className='relative uppercase text-4xl w-full text-center max-lg:text-2xl max-sm:text-xl'>
-                        <h4 className='relative z-10 bg-[#333] inline px-10'>코드 툴 : 효율적으로 구현하기 위해</h4>
-                        <div className='w-full absolute top-[20px] left-0'>
+                        <h4 className='relative z-10 bg-[#222831] inline px-10'>코드 툴 : 효율적으로 구현하기 위해</h4>
+                        <div className='hr-wrapper w-full absolute top-[20px] left-0'>
                             <hr></hr>
                         </div>
                         <ul className={`${ulSpace}`}>
