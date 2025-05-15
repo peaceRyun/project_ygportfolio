@@ -44,7 +44,18 @@ const PerformanceB = () => {
         };
     }, []);
     return (
-        <section className='bg-primary relative z-30'>
+        <section className='bg-transparent relative z-30 min-h-screen'>
+            <div className='absolute top-0 left-0 w-full h-full'>
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    src='/home/banner/Dust_Impact_03.mp4'
+                    alt='dust background'
+                    className='absolute top-0 left-0 w-full h-full object-cover'
+                />
+            </div>
             <h2 className='sr-only'>performanceB</h2>
             <div
                 className='textBox w-full h-screen sticky top-0 flex items-center justify-center leading-normal '
