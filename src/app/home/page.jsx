@@ -7,6 +7,7 @@ import Intro from './components/intro/Intro';
 import ProjectList from './components/project/ProjectList';
 import About from './components/about/About';
 import SecOpening from './components/secopening/SecOpening';
+import LearningB from './components/banner/LearningB';
 
 const HomePage = () => {
     const [isLoadOn, setIsLoadOn] = useState(true);
@@ -25,6 +26,8 @@ const HomePage = () => {
                 <SecOpening title='project' />
                 <ProjectList />
                 <About />
+                <LearningB />
+                <SecOpening title='study' />
             </main>
         </>
     );

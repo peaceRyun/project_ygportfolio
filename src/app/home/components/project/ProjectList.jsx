@@ -1,7 +1,5 @@
 'use client';
 
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import 'swiper/css';
 import { portfoliodata } from '@/app/api/data';
 import Link from 'next/link';
@@ -9,8 +7,6 @@ import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Ribbon from '@/app/ui/tag/Ribbon';
 import { useProjectListScrollEffect } from '@/app/hooks/useGsap';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ProjectList = () => {
     const swiperRef = useRef(null);

@@ -1,16 +1,12 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useRef } from 'react';
 import SecOpening from '../secopening/SecOpening';
 import AboutIntro from './components/AboutIntro';
 import MyValues from './components/MyValues';
 import AddMotion from './components/AddMotion';
 import Skills from './components/Skills';
 import { useAboutScrollEffect } from '@/app/hooks/useGsap';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const sectionRef = useRef(null);

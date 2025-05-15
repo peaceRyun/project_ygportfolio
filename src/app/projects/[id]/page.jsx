@@ -14,7 +14,7 @@ import { RxArrowTopRight } from 'react-icons/rx';
 
 const secStyle = 'relative bg-secondary rounded-xl p-8 text-black';
 const h5Style = 'absolute top-0 left-0 bg-white pr-3 pb-3 rounded-br-2xl font-bold text-2xl w-[250px]';
-const titleWrapStyle = 'bg-primary-light rounded-4xl px-4 py-2 text-center w-full block';
+const titleWrapStyle = 'bg-primary rounded-4xl px-4 py-2 text-center w-full block';
 
 const ProjectPage = () => {
     const params = useParams();

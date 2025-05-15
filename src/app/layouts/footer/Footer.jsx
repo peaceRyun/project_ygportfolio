@@ -12,9 +12,9 @@ const Footer = () => {
             >
                 <div className='relative flex flex-col gap-10 items-center w-[800px] p-6 text-center '>
                     <p className='font-poppins text-5xl font-bold'>감사합니다.</p>
-                    <p className='font-pretendard'>
-                        프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로 도전하고, 항상 사용자의 관점에서
-                        생각하며 사용하기 좋은 서비스를 만들고 싶습니다.
+                    <p className='font-pretendard text-center'>
+                        프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로 도전하고, <br />
+                        항상 사용자의 관점에서 생각하며 사용하기 좋은 서비스를 만들고 싶습니다.
                     </p>
                 </div>
                 <div className='flex justify-between w-72'>

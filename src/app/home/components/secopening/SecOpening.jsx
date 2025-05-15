@@ -1,11 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
 import { useSecOpeningScrollEffect } from '@/app/hooks/useGsap';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const SecOpening = ({ title, type }) => {
     const titleRef = useRef(null);

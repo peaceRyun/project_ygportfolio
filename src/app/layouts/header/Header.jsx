@@ -146,22 +146,14 @@ const Header = () => {
                             <Link
                                 href='/#projects'
                                 onClick={handleProjectsClick}
-                                className='py-4 px-5 hover:text-primary-dark'
+                                className='py-4 px-5 hover:text-primary'
                             >
                                 Projects
                             </Link>
-                            <Link
-                                href='/#about'
-                                onClick={handleAboutClick}
-                                className='py-4 px-5 hover:text-primary-dark'
-                            >
+                            <Link href='/#about' onClick={handleAboutClick} className='py-4 px-5 hover:text-primary'>
                                 About
                             </Link>
-                            <Link
-                                href='#contact'
-                                onClick={handleContactClick}
-                                className='py-4 px-5 hover:text-primary-dark'
-                            >
+                            <Link href='#contact' onClick={handleContactClick} className='py-4 px-5 hover:text-primary'>
                                 Contact
                             </Link>
                         </div>
