@@ -1,36 +1,14 @@
 'use client';
 
+import { useSkillsHrEffect } from '@/app/hooks/useGsap';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useEffect } from 'react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ulSpace = 'flex items-center justify-center gap-5 mt-14';
 
 const ImgSizeWrap = 'relative w-15 h-15 max-lg:w-13 max-sm:w-10';
 
 const Skills = () => {
-    useEffect(() => {
-        const hrWrappers = gsap.utils.toArray('.hr-wrapper');
-
-        hrWrappers.forEach((wrapper) => {
-            gsap.from(wrapper, {
-                width: '0%',
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: wrapper,
-                    start: 'top 75%',
-                    once: true,
-                },
-            });
-        });
-
-        return () => {
-            ScrollTrigger.getAll().forEach((st) => st.kill());
-        };
-    }, []);
+    useSkillsHrEffect();
     return (
         <div className='relative w-full h-screen max-w-[1400px] mx-auto text-[#00ADB5]'>
             <div className='flex flex-col gap-45'>

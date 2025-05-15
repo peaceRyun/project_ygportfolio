@@ -42,6 +42,31 @@ export const useAboutScrollEffect = (sectionRef) => {
 };
 
 /**
+ * Skills 컴포넌트 - HR 라인 애니메이션
+ */
+export const useSkillsHrEffect = () => {
+    useEffect(() => {
+        const hrWrappers = gsap.utils.toArray('.hr-wrapper');
+
+        hrWrappers.forEach((wrapper) => {
+            gsap.from(wrapper, {
+                width: '0%',
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: 'top 75%',
+                    once: true,
+                },
+            });
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((st) => st.kill());
+        };
+    }, []);
+};
+
+/**
  * PerformanceB 섹션 효과
  */
 export const usePerformanceScrollEffect = (pinWrapRef, textObjectRef) => {
