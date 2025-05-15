@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useScroll, useTransform } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,20 +79,6 @@ export const usePerformanceScrollEffect = (pinWrapRef, textObjectRef) => {
 
         return () => ScrollTrigger.killAll();
     }, [pinWrapRef, textObjectRef]);
-};
-
-/**
- * Intro 섹션 효과 (Framer Motion)
- */
-export const useIntroTransform = (ref) => {
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ['0', '1'],
-    });
-
-    const translateY = useTransform(scrollYProgress, [0, 1], [0, 1000]);
-
-    return translateY;
 };
 
 /**

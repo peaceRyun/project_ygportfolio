@@ -1,7 +1,8 @@
 'use client';
 
+import { useIntroTransform } from '@/app/hooks/useMotion';
 import ScrollToExploreIcon from '@/app/ui/scrolltoexploreicon/ScrollToExploreIcon';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
@@ -11,12 +12,7 @@ const Intro = () => {
         'font-poppins text-left leading-[0.8em] tracking-[-0.09em] text-[rgb(52,53,57)] max-sm:text-40-16vh-73 max-lg:text-73-16vh-136 text-90-15vh-180';
 
     const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ['0', '1'],
-    });
-
-    const translateY = useTransform(scrollYProgress, [0, 1], [0, 1000]); // 스크롤 진행도 0~1을 translateY 0~100px로 매핑
+    const translateY = useIntroTransform(ref);
 
     return (
         <div ref={ref} style={{ height: '100vh', position: 'relative' }}>

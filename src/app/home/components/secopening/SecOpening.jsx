@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useSecOpeningScrollEffect } from '@/app/hooks/useGsap';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,28 +11,7 @@ const SecOpening = ({ title, type }) => {
     const titleRef = useRef(null);
     const titleArray = title.split('').map((char) => (char === ' ' ? '\u00a0' : char));
 
-    useEffect(() => {
-        const element = titleRef.current;
-
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: element,
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            },
-        });
-
-        tl.fromTo(element, { scale: 3 }, { scale: 1, ease: 'none' });
-
-        document.body.classList.add('no-horizontal-scroll');
-
-        return () => {
-            document.body.classList.remove('no-horizontal-scroll');
-            ScrollTrigger.getAll().forEach((t) => t.kill());
-            tl.kill();
-        };
-    }, []);
+    useSecOpeningScrollEffect(titleRef);
 
     return (
         <div className={`relative w-full h-[200vh] ${type === 'black' ? 'bg-#333' : null}`}>

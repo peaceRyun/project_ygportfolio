@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { usePerformanceScrollEffect } from '@/app/hooks/useGsap';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,39 +11,7 @@ const PerformanceB = () => {
     const pinWrapRef = useRef(null);
     const textObjectRef = useRef(null);
 
-    useEffect(() => {
-        const pinWrap = pinWrapRef.current;
-        const textObject = textObjectRef.current;
-
-        if (pinWrap && textObject) {
-            // 배경색 채우기 애니메이션 (흰색)
-            gsap.to(textObject, {
-                backgroundSize: '100% 100%',
-                scrollTrigger: {
-                    trigger: pinWrap,
-                    start: 'top top',
-                    end: '+=500px',
-                    pin: true,
-                    scrub: 1,
-                },
-            });
-
-            // 하이라이트 키워드 채우기 애니메이션 (노란색)
-            gsap.to(textObject.querySelectorAll('.highlight'), {
-                backgroundSize: '100% 100%',
-                scrollTrigger: {
-                    trigger: pinWrap,
-                    start: 'top top',
-                    end: '+=500px',
-                    scrub: 1,
-                },
-            });
-        }
-
-        return () => {
-            ScrollTrigger.killAll();
-        };
-    }, []);
+    usePerformanceScrollEffect(pinWrapRef, textObjectRef);
     return (
         <section className='bg-transparent relative z-30 min-h-screen'>
             <div className='absolute top-0 left-0 w-full h-full'>

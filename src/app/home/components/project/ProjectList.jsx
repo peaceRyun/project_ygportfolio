@@ -5,9 +5,10 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import 'swiper/css';
 import { portfoliodata } from '@/app/api/data';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Ribbon from '@/app/ui/tag/Ribbon';
+import { useProjectListScrollEffect } from '@/app/hooks/useGsap';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,47 +16,7 @@ const ProjectList = () => {
     const swiperRef = useRef(null);
     const sectionRef = useRef(null);
 
-    useEffect(() => {
-        let scrollTrigger;
-        const totalSlides = portfoliodata.length;
-
-        if (swiperRef.current && sectionRef.current) {
-            const swiper = swiperRef.current;
-
-            const transitionDuration = 0.3;
-
-            // 스크롤 트리거 설정
-            scrollTrigger = ScrollTrigger.create({
-                trigger: sectionRef.current,
-                pin: true,
-                start: 'top top',
-                end: `+=${(totalSlides - 1) * 100}%`,
-                snap: {
-                    snapTo: 1 / (totalSlides - 1), // 각 슬라이드 간격을 균등하게 나눔
-                    duration: { min: 0.6, max: 0.8 }, // 스냅 애니메이션 시간
-                    ease: 'power2.inOut',
-                },
-                onUpdate: (self) => {
-                    // 스크롤 위치에 따른 슬라이드 인덱스 계산
-                    const newIndex = Math.round(self.progress * (totalSlides - 1));
-
-                    // 슬라이드 인덱스가 변경된 경우만 업데이트
-                    if (swiper.activeIndex !== newIndex) {
-                        swiper.slideTo(newIndex, transitionDuration * 1000, 'linear');
-                    }
-                },
-            });
-        }
-
-        return () => {
-            if (scrollTrigger) {
-                scrollTrigger.kill();
-            }
-            if (swiperRef.current) {
-                swiperRef.current.off('slideChange');
-            }
-        };
-    }, []);
+    useProjectListScrollEffect(swiperRef, sectionRef, portfoliodata.length);
     return (
         <section id='projects' className='relative w-full h-full overflow-hidden bg-white' ref={sectionRef}>
             <h2 className='sr-only'>프로젝트 섹션</h2>
