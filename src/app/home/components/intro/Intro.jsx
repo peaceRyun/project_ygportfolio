@@ -56,7 +56,7 @@ const Intro = () => {
                             </div>
                         </div>
                         <div className='w-full flex flex-col items-center justify-center gap-[1vh] pb-[10vh] relative'>
-                            <span className='font-bold text-12-1vw-20 text-[#2c3e50]'>스크롤로 탐색하기</span>
+                            <span className='font-bold text-12-1vw-20 text-primary-dark'>스크롤로 탐색하기</span>
                             <ScrollToExploreIcon className='absolute bottom-[2vh] left-1/2 -translate-x-1/2' />
                         </div>
                     </div>
