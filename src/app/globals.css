@@ -416,3 +416,86 @@ body.no-horizontal-scroll {
         opacity: 1;
     }
 }
+
+/* badge 관련 시작 */
+.badge {
+    line-height: 1em;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+    letter-spacing: -2px;
+    display: block;
+    width: 6rem;
+    height: 4rem;
+    background: linear-gradient(to bottom, #999999 0%, #cccccc 100%);
+    color: white;
+    margin: 1em 1em 0;
+    padding-top: 1rem;
+    position: relative;
+    -webkit-filter: drop-shadow(0 0.5rem 0.3em rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 0.5rem 0.3em rgba(0, 0, 0, 0.5));
+    transform: translate3d(0, 0, 0);
+}
+
+.badge::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 3rem solid transparent;
+    border-left: 3rem solid transparent;
+    border-top: 1.5rem solid #cccccc;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+}
+
+.badge.badge--red {
+    background: linear-gradient(to bottom, #d3362d 0%, #e57368 100%);
+}
+
+.badge.badge--red::after {
+    border-top: 1.5rem solid #e57368;
+}
+
+.badge.badge--orange {
+    background: linear-gradient(to bottom, #e7711b 0%, #f7981d 100%);
+}
+
+.badge.badge--orange::after {
+    border-top: 1.5rem solid #f7981d;
+}
+
+.badge.badge--yellow {
+    background: linear-gradient(to bottom, #f1ca3a 0%, #f6eb3b 100%);
+}
+
+.badge.badge--yellow::after {
+    border-top: 1.5rem solid #f6eb3b;
+}
+
+.badge.badge--green {
+    background: linear-gradient(to bottom, #5f9654 0%, #65b045 100%);
+}
+
+.badge.badge--green::after {
+    border-top: 1.5rem solid #65b045;
+}
+
+.badge.badge--blue {
+    background: linear-gradient(to bottom, #1c91c0 0%, #11a9cc 100%);
+}
+
+.badge.badge--blue::after {
+    border-top: 1.5rem solid #11a9cc;
+}
+
+.badge.badge--purple {
+    background: linear-gradient(to bottom, #5c3292 0%, #7e3794 100%);
+}
+
+.badge.badge--purple::after {
+    border-top: 1.5rem solid #7e3794;
+}
+/* ribbon 관련 끝 */

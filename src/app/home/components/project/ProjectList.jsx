@@ -79,6 +79,12 @@ const ProjectList = () => {
                         } else if (item.type && item.type.find((t) => t.name === '팀')) {
                             ribbonType = '팀';
                         }
+                        let badgeType = '';
+                        if (item.projecttype && item.projecttype.find((pt) => pt === '사이드')) {
+                            badgeType = '사이드';
+                        } else if (item.projecttype && item.projecttype.find((pt) => pt === '토이')) {
+                            badgeType = '토이';
+                        }
                         return (
                             <SwiperSlide
                                 key={item.id}
@@ -95,6 +101,15 @@ const ProjectList = () => {
                                         {ribbonType && (
                                             <div className='relative z-30'>
                                                 <Ribbon ribbonType={ribbonType}>{ribbonType}</Ribbon>
+                                            </div>
+                                        )}
+                                        {badgeType && (
+                                            <div className='absolute top-0 right-0 z-30'>
+                                                <div
+                                                    className={`badge ${badgeType === '사이드' ? 'badge--purple' : null} ${badgeType === '토이' ? 'badge--yellow' : null}`}
+                                                >
+                                                    {badgeType} <br /> 프로젝트
+                                                </div>
                                             </div>
                                         )}
                                         <div
