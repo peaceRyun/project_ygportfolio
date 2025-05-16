@@ -14,8 +14,8 @@ const Footer = () => {
                     <p className='font-poppins text-5xl font-bold'>감사합니다.</p>
                     <p className='font-pretendard text-center'>
                         요구사항을 정확히 구현하기 위해 낯선 기술에도 적극적으로 도전하며 연구하고, <br />
-                        사용자의 관점에서 우선적으로 생각하고 소통하여, 결과적으로 가치있는 서비스에 일조 하고자 하는
-                        신념하에 열심히 개발하겠습니다.
+                        사용자의 관점에서 우선적으로 생각하고 소통하여, <br />
+                        결과적으로 가치있는 서비스에 일조 하고자 하는 신념하에 열심히 개발하겠습니다.
                     </p>
                 </div>
                 <div className='flex justify-between w-72'>
