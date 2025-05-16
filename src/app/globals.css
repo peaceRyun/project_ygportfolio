@@ -255,7 +255,7 @@ body.no-horizontal-scroll {
 }
 
 #cursor.cursor-style03:after {
-    background: rgba(162, 178, 159, 0.5);
+    background: rgba(0, 173, 181, 0.5);
     backdrop-filter: blur(3px);
     transform: scale(4.4);
 }
