@@ -21,6 +21,7 @@ const HomePage = () => {
     return (
         <>
             {isLoadOn && <LoadScreen handleLoad={handleLoad} />}
+
             <main className={`${mainCont}`}>
                 <Intro />
                 <PerformanceB />
