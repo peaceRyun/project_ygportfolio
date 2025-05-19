@@ -75,7 +75,11 @@ export const useSkillsHrEffect = () => {
         });
 
         return () => {
-            triggers.forEach((t) => t.kill());
+            triggers.forEach((t) => {
+                if (t && typeof t.kill === 'function') {
+                    t.kill();
+                }
+            });
         };
     }, [pathname]);
 };
@@ -176,8 +180,9 @@ export const useSecOpeningScrollEffect = (titleRef) => {
 
         return () => {
             document.body.classList.remove('no-horizontal-scroll');
-            ScrollTrigger.getAll().forEach((t) => t.kill());
-            tl.kill();
+            if (tl) {
+                tl.kill();
+            }
         };
     }, [titleRef]);
 };
