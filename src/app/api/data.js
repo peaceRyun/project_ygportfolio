@@ -1,6 +1,6 @@
 export const portfoliodata = [
     {
-        id: 4,
+        id: 1,
         title: 'VanCleef',
         titledetail: '쥬얼리 브랜드&쇼핑몰 웹페이지\n리뉴얼',
         src: '/home/displayportfolio/thumb/vancleef.png',
@@ -72,7 +72,7 @@ export const portfoliodata = [
         ],
     },
     {
-        id: 5,
+        id: 2,
         title: 'VIBO',
         titledetail: 'OTT 자체기획 홈페이지',
         src: '/home/displayportfolio/thumb/vibo.png',
@@ -152,7 +152,7 @@ export const portfoliodata = [
         ],
     },
     {
-        id: 1,
+        id: 3,
         title: 'PRETCOORD',
         titledetail: '패션 3D 플랫폼 사이트\n랜딩 페이지 코드 리메이크',
         src: '/home/displayportfolio/thumb/pretcoord.png',
@@ -201,7 +201,7 @@ export const portfoliodata = [
         ],
     },
     {
-        id: 2,
+        id: 4,
         title: 'Sunfish',
         titledetail: '스트레스 관리 모바일웹',
         src: '/home/displayportfolio/thumb/sunfish-thumbnail1.png',
@@ -276,7 +276,7 @@ export const portfoliodata = [
         ],
     },
     {
-        id: 3,
+        id: 5,
         title: '삼천리 자전거 ',
         titledetail: '자전거 브랜드/쇼핑몰 페이지\n리뉴얼',
         src: '/home/displayportfolio/thumb/samcheonbike.png',
