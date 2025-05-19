@@ -46,18 +46,18 @@ export const portfoliodata = [
         keyFeatures: [
             {
                 title: '사용자 인증 시스템',
-                video: '/projects/vancleef/vancleef-login.mp4',
+                video: '/staticprojects/vancleef/vancleef-login.mp4',
                 desc1: '로컬스토리지 기반 로그인/회원가입 기능 구현, 세션 유지 및 마이페이지 기록 연동 구현',
             },
             {
                 title: '제품 카테고리 필터링',
-                video: '/projects/vancleef/vancleef-search.mp4',
+                video: '/staticprojects/vancleef/vancleef-search.mp4',
                 desc1: '리스트페이지에서는 직관적인 4개의 카테고리로 구성하고, new, best, 가격순으로도 제품들을 볼 수 있습니다.',
                 desc2: '검색 기능은 제품명 검색 외에도, 컬렉션명이나 시리즈명으로도 검색이 가능하도록 구현하였습니다.',
             },
             {
                 title: '화려하면서 깔끔한 디자인 페이지',
-                video: '/projects/vancleef/vancleef-gsap.mp4',
+                video: '/staticprojects/vancleef/vancleef-gsap.mp4',
                 desc1: '로딩, 랜딩페이지, 전시회페이지, About페이지에서 Gsap을 활용한 깔끔한 스크롤 인터렉션 페이지를 만들어 사용자가 브랜드에 대해 보다 직관적이고 재밌게 접근하게 만들었습니다.',
             },
         ],
@@ -118,19 +118,19 @@ export const portfoliodata = [
         keyFeatures: [
             {
                 title: 'TMDB API 활용 콘텐츠 컨셉별 Swiper 및 검색 기능',
-                video: '/projects/vibo/vibo-search.mp4',
+                video: '/staticprojects/vibo/vibo-search.mp4',
                 desc1: 'TMDB API를 활용하여 요일별 신작 Swiper, 인기 Top10 Swiper, 장르별 리스트, 검색, 애니메이션 Swiper, 다크한 분위기 영화 Swiper, 감성 드라마 Swiper 를 구현하였습니다. ',
             },
             {
                 title: '로컬 스토리지 기반 로그인/회원가입, 프로필 아이콘, 마이페이지 기록 관리 기능 구현',
-                video: '/projects/vibo/vibo-login.mp4',
+                video: '/staticprojects/vibo/vibo-login.mp4',
                 desc1: 'Local Storage를 활용하여 로그인/회원가입 기능을 구현했습니다. 간단한 비밀번호 유효성 검사와 중복 닉네임 검사까지 구현하여 보안 강화와 가입 사용자에 대한 구별하였습니다.',
                 desc2: '개인화된 기록관리를 할 수 있도록, 관심 콘텐츠, 시청 기록, 리뷰/평점 기록을 동적으로 그리고 한눈에 볼 수 있도록 구현하였습니다.',
                 desc3: '프로필 아이콘 변경 페이지를 통해 디자이너가 직접 디자인한 아이콘을 선택하고 저장되도록 구현하였습니다.',
             },
             {
                 title: '곳곳에 있는 사용자 인터렉션 요소',
-                video: '/projects/vibo/vibo-interaction.mp4',
+                video: '/staticprojects/vibo/vibo-interaction.mp4',
                 desc1: '사용자가 사이트에 흥미를 느끼고, 군데군데 홍보 요소에 대해 거부감을 느끼지 않도록 애니메이션을 추가하였습니다.',
             },
         ],
@@ -175,18 +175,18 @@ export const portfoliodata = [
         keyFeatures: [
             {
                 title: '스크롤 인터렉션 효과',
-                video: '/projects/pretcoord/pretcoord-scroll.mp4',
+                video: '/staticprojects/pretcoord/pretcoord-scroll.mp4',
                 desc1: '- 인트로 영상을 scale 값을 조절하여 스크롤을 통해 더 확대될 수 있도록 설계하여 몰입감을 높였습니다. ',
                 desc2: '- 사용자가 Pretcoord 소개 문구를 재미나게 읽을 수 있도록 스크롤 할때마다 글씨가 빛나게끔 구현하였습니다.',
             },
             {
                 title: '반응형',
-                video: '/projects/pretcoord/pretcoord-responsive.mp4',
+                video: '/staticprojects/pretcoord/pretcoord-responsive.mp4',
                 desc1: '모바일, 태블릿, 모니터 등 어떤 디바이스에서도 일관된 사용자 경험을 제공합니다. 글자들을 Clamp라는 css 함수를 통해 제어하면서 보다 효율적으로 반응형을 구현하면서 재미를 느꼈습니다',
             },
             {
                 title: '부드러운 애니메이션',
-                video: '/projects/pretcoord/pretcoord-hover.mp4',
+                video: '/staticprojects/pretcoord/pretcoord-hover.mp4',
                 desc1: '링크 글씨 hover효과(Glow, line Effect)를 구현해보았습니다. UI적으로 화려한 두 hover효과에 대하여 디자인적으로 학습해보고 구현하는 방법도 알아갈 수 있었던 좋은 기회가 되었습니다.',
             },
         ],
@@ -237,22 +237,22 @@ export const portfoliodata = [
         keyFeatures: [
             {
                 title: '전광판 등록을 통한 ToDoList 알람',
-                video: '/projects/sunfish/sunfish-submit.mp4',
+                video: '/staticprojects/sunfish/sunfish-submit.mp4',
                 desc1: '기간, 메트릭스 우선순위 뿐만 아니라 지시한 사람까지 기록하면서 자동으로 정리되는 1순위를 간편하게 전광판에 등록해보세요!',
             },
             {
                 title: '간편한 비스트레스성 요리 재료 검색과 관련 레시피를 손쉽게!',
-                video: '/projects/sunfish/sunfish-food.mp4',
+                video: '/staticprojects/sunfish/sunfish-food.mp4',
                 desc1: '우울, 화남, 불안, 피곤의 대표적인 4가지 요인에 따른 비스트레스성 요리 재료를 검색해보고 관련 레시피를 손쉽게 찾아보세요!',
             },
             {
                 title: '증상별 백과사전을 통해 본인의 몸을 되돌아 보아요!',
-                video: '/projects/sunfish/sunfish-encyclopedia.mp4',
+                video: '/staticprojects/sunfish/sunfish-encyclopedia.mp4',
                 desc1: '여드름, 목/어깨 통증, 소화장애, 대표 3가지 스트레스 증상들을 사전을 통해 배경지식을 쌓으며 몸을 풀어보세요!',
             },
             {
                 title: '감정 일기장을 통해 매일의 스트레스를 관리해볼까요?',
-                video: '/projects/sunfish/sunfish-diary.mp4',
+                video: '/staticprojects/sunfish/sunfish-diary.mp4',
                 desc1: '락이 걸려있어 남들이 볼 걱정 NO!',
                 desc2: '한눈에 보기 쉬운 일기장 리스트!',
                 desc3: '제목/내용/날짜 뿐만 아니라 그날의 기분도 저장해보아요!',
@@ -320,17 +320,17 @@ export const portfoliodata = [
         keyFeatures: [
             {
                 title: '동적 애니메이션이 가미된 브랜드 메세지&배너',
-                video: '/projects/samchoen/samchoen-ani.mp4',
+                video: '/staticprojects/samchoen/samchoen-ani.mp4',
                 desc1: '스크롤 할 때마다 툭툭 튀어나오는 고화질 사진들과 부드럽게 나오는 메세지를 통해 몰입감 있는 삼천리 자전거 브랜드 이미지를 경험할 수 있습니다.',
             },
             {
                 title: '자전거에 대한 세밀한 선택이 가능한 상세페이지',
-                video: '/projects/samchoen/samchoen-detail.mp4',
+                video: '/staticprojects/samchoen/samchoen-detail.mp4',
                 desc1: '기존 사이트에서는 한눈에 보기 어려웠던 사이즈/컬러 선택을 한 페이지에 보기 쉽게 정리하였습니다. ',
             },
             {
                 title: '웹접근성에 맞추기',
-                video: '/projects/samchoen/samcheon-valid.mp4',
+                video: '/staticprojects/samchoen/samcheon-valid.mp4',
                 desc1: 'Accessibility Korea 에서 검증',
                 desc2: 'NULI 지침에 맞춘 마크업',
             },

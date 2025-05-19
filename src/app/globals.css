@@ -212,7 +212,7 @@ body.no-horizontal-scroll {
 
 .waveAni {
     animation: wave 30s linear infinite;
-    background: url(../../public/projects/bg_wave.png) no-repeat;
+    background: url(../../public/staticprojects/bg_wave.png) no-repeat;
 }
 
 @media (max-width: 1280px) {
