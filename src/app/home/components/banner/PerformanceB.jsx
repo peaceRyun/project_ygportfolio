@@ -29,12 +29,12 @@ const PerformanceB = () => {
             >
                 <div className='w-full max-w-[1400px] mx-auto max-sm:px-6 max-lg:px-12'>
                     <span
-                        className='webkitSpan font-poppins font-black text-40-5vh-60 max-sm:text-32-3vh-40 max-lg:text-38-4vh-44 text-white/30 bg-clip-text bg-no-repeat bg-gradient-to-r from-white to-white bg-[size:0%_100%]'
+                        className='webkitSpan font-poppins font-bold text-[4vh] max-lg:text-[3vh] max-sm:text-[2vh] text-white/30 bg-clip-text bg-no-repeat bg-gradient-to-r from-white to-white bg-[size:0%_100%]'
                         ref={textObjectRef}
                     >
                         "당신이 능력을 최대한 발휘해서 실행하는 데 주의를 기울이고 있다면,
                         <br /> 당신은
-                        <span className='highlight bg-clip-text bg-no-repeat bg-gradient-to-t from-[var(--primary-dark)] to-[var(--primary-dark)] bg-[size:100%_0%] text-transparent px-1'>
+                        <span className='highlight bg-clip-text bg-no-repeat bg-gradient-to-t from-[var(--primary-dark)] to-[var(--primary-dark)] bg-[size:100%_0%] text-transparent px-1 font-black'>
                             성과 영역
                         </span>
                         에 있는 것이다."

@@ -29,12 +29,12 @@ const LearningB = () => {
             >
                 <div className='w-full max-w-[1400px] mx-auto max-sm:px-6 max-lg:px-12'>
                     <span
-                        className='webkitSpan font-poppins font-black text-40-5vh-60 max-sm:text-32-3vh-40 max-lg:text-38-4vh-44 text-white/30 bg-clip-text bg-no-repeat bg-gradient-to-r from-white to-white bg-[size:0%_100%]'
+                        className='webkitSpan font-poppins font-bold text-[4vh] max-lg:text-[3vh] max-sm:text-[2vh] text-white/30 bg-clip-text bg-no-repeat bg-gradient-to-r from-white to-white bg-[size:0%_100%]'
                         ref={textObjectRef}
                     >
                         "당신이 기술을 개선하고 학습을 촉진하는 전략을 사용하는데 집중하고 있다면,
                         <br /> 당신은
-                        <span className='highlight bg-clip-text bg-no-repeat bg-gradient-to-t from-[var(--primary-dark)] to-[var(--primary-dark)] bg-[size:100%_0%] text-transparent px-1'>
+                        <span className='highlight bg-clip-text bg-no-repeat bg-gradient-to-t from-[var(--primary-dark)] to-[var(--primary-dark)] bg-[size:100%_0%] text-transparent px-1 font-black'>
                             학습 영역
                         </span>
                         에 있는 것이다."
