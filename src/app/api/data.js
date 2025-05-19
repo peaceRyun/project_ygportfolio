@@ -77,8 +77,8 @@ export const portfoliodata = [
         titledetail: 'OTT 자체기획 홈페이지',
         src: '/home/displayportfolio/thumb/vibo.png',
         alt: '팀포폴241231',
-        thumbstartdate: '2024.12',
-        period_start: '2024.12.31',
+        thumbstartdate: '2025.01',
+        period_start: '2025.01.01',
         period_end: '2025.02.25',
         desc: '상업성 높은 3개의 사이트(넷플릭스, 왓챠, 티빙)을 재해석하여 탄생한 OTT 사이트 “ViBo”입니다.  React Vite를 활용해 콘텐츠별 리뷰 기능 및 UI 개선, 동적 애니메이션을 통한 홍보 강화를 통해 기존 사이트들의 부족한 사용자 경험을 보완하여 만든 순수 React 사이트 입니다. 4명의 협업을 통해 만들어졌습니다.',
         type: [
