@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'Normalize.css';
 
 :root {
     --background: #ffffff;
