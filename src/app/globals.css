@@ -220,6 +220,7 @@ body.no-horizontal-scroll {
         animation: wave 25s linear infinite;
     }
 }
+/* 프로젝트 상세페이지 Wave animation 관련 끝*/
 
 /* 커스텀 커서 스타일 */
 #cursor {
@@ -313,7 +314,7 @@ body.no-horizontal-scroll {
     transform: translate(-50%, -50%) translateX(0) skewX(-20deg);
 }
 
-/* 기술스택 아이콘 hover shine효과 */
+/* hover shine효과 */
 .hover-shine {
     position: relative;
     overflow: hidden; /* 가상 요소가 넘치는 것을 방지 */
@@ -334,20 +335,20 @@ body.no-horizontal-scroll {
 }
 
 .hover-shine:hover::before {
-    animation: shine 0.75s ease-in-out; /* 애니메이션 적용 */
+    animation: shine 0.75s ease-in-out;
 }
 
 @keyframes shine {
     0% {
         opacity: 1;
-        left: -75%; /* 시작 위치에서 투명도 1 */
+        left: -75%;
     }
     40% {
-        opacity: 1; /* 40% 지점까지 투명도 유지 */
+        opacity: 1;
     }
     100% {
-        left: 125%; /* 끝 위치 */
-        opacity: 0; /* 끝 지점 투명도 0 */
+        left: 125%;
+        opacity: 0;
     }
 }
 
@@ -368,7 +369,7 @@ body.no-horizontal-scroll {
     will-change: font-weight;
 }
 
-/* coder path ani 관련 */
+/* coder path ani 관련 시작  */
 #coder {
     animation: dash 10s linear forwards;
     stroke-dasharray: 5000;
@@ -391,8 +392,9 @@ body.no-horizontal-scroll {
         opacity: 1;
     }
 }
+/* coder path ani 관련 끝  */
 
-/* glowIn */
+/* glowIn 프로젝트 페이지 제목 관련 효과 시작*/
 .glowIn {
     color: white;
 
@@ -416,6 +418,7 @@ body.no-horizontal-scroll {
         opacity: 1;
     }
 }
+/* glowIn 프로젝트 페이지 제목 관련 효과 끝*/
 
 /* badge 관련 시작 */
 .badge {
@@ -498,7 +501,7 @@ body.no-horizontal-scroll {
 .badge.badge--purple::after {
     border-top: 1.5rem solid #7e3794;
 }
-/* ribbon 관련 끝 */
+/* badge 관련 끝 */
 
 /* intro label hover 인터렉션 관련 애니메이션 시작*/
 @keyframes odsoky {
