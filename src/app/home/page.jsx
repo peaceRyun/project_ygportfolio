@@ -12,7 +12,7 @@ import Study from './components/study/Study';
 
 const HomePage = () => {
     const [isLoadOn, setIsLoadOn] = useState(true);
-    const mainCont = 'w-full relative max-w-[1920px] bg-white mx-auto';
+    const mainCont = 'w-full relative bg-white mx-auto';
 
     const handleLoad = () => {
         setIsLoadOn(false);
