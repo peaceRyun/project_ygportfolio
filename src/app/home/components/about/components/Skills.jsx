@@ -57,7 +57,7 @@ const Skills = () => {
                             </li>
                             <li>
                                 <div className={`${ImgSizeWrap}`}>
-                                    <Image src='/ui/skillicons/javascript.svg' fill alt='JS' sizes='1' />
+                                    <Image src='/ui/skillicons/JavaScript.svg' fill alt='JS' sizes='1' />
                                 </div>
                             </li>
                             <li>
@@ -72,7 +72,7 @@ const Skills = () => {
                             </li>
                             <li>
                                 <div className={`${ImgSizeWrap}`}>
-                                    <Image src='/ui/icons/gsap.svg' fill alt='GSAP' sizes='1' />
+                                    <Image src='/ui/icons/GSAP.svg' fill alt='GSAP' sizes='1' />
                                 </div>
                             </li>
                         </ul>
@@ -105,7 +105,7 @@ const Skills = () => {
                             </li>
                             <li>
                                 <div className={`${ImgSizeWrap}`}>
-                                    <Image src='/ui/skillicons/sass.svg' fill alt='scss' sizes='1' />
+                                    <Image src='/ui/skillicons/Sass.svg' fill alt='scss' sizes='1' />
                                 </div>
                             </li>
                         </ul>
