@@ -11,7 +11,7 @@ const SecOpening = ({ title, type }) => {
 
     return (
         <div className={`relative w-full h-[200vh] ${type === 'black' ? 'bg-#333' : null}`}>
-            <div className='sticky top-0 left-0 w-full h-[70vh] flex items-center justify-center'>
+            <div className='sticky top-0 left-0 w-full h-[50vh] flex items-center justify-center'>
                 <div
                     ref={titleRef}
                     className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full text-center whitespace-nowrap ${type === 'black' ? 'text-white' : null}`}

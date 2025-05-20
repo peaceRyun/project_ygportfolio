@@ -16,7 +16,7 @@ const ProjectList = () => {
     return (
         <section id='projects' className='relative w-full h-full overflow-hidden bg-white' ref={sectionRef}>
             <h2 className='sr-only'>프로젝트 섹션</h2>
-            <div className='px-20 py-[150px] h-screen'>
+            <div className='px-20 py-[150px] h-screen min-lg:py-0 min-lg:pt-[30vh] max-lg:px-0 max-sm:py-0 max-sm:pt-[35vh]'>
                 <Swiper
                     onSwiper={(swiper) => {
                         swiperRef.current = swiper;
