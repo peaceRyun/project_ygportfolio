@@ -162,7 +162,7 @@ const ProjectPage = () => {
                                         {type.map((item) => (
                                             <li
                                                 key={item.name}
-                                                className={`py-1 px-2 rounded-4xl whitespace-nowrap ${item.classname}`}
+                                                className={`py-2 px-4 rounded-4xl whitespace-nowrap ${item.classname}`}
                                             >
                                                 {item.name}
                                             </li>
