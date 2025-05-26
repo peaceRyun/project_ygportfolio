@@ -91,7 +91,7 @@ const AddMotion = () => {
 
     return (
         <div ref={addMotionRef} className='w-full h-auto px-12 text-[11vw] font-clashv'>
-            <div className='pt-[50px] flex justify-between uppercase leading-none tracking-[-0.2vw]'>
+            <div className='pt-[500px] flex justify-between uppercase leading-none tracking-[-0.2vw]'>
                 <span className='Left text-left pr-[1px]'>
                     <span className='herotitle1 inline-block relative top-[2.5vw] overflow-visible z-10'>
                         <i className='absolute z-20 top-[20px] left-0 text-left blur-sm text-black-important overflow-visible'>
